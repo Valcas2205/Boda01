@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Ronald &amp; Mafe — 03.04.2027</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Save the date · Isla de Margarita, Venezuela">
+<meta property="og:title" content="Ronald &amp; Mafe — 03.04.2027">
+<meta property="og:description" content="Te invitamos a celebrar nuestra boda en Isla de Margarita, Venezuela.">
+<meta property="og:image" content="assets/og-playa.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#6B7A3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Allura&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/sello.webp">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;color:#3F4B22;font-family:'Jost',sans-serif;background:#F5ECD0;-webkit-font-smoothing:antialiased}
+a{color:#55622A;text-decoration:none}
+a:hover{color:#3F4B22}
+img{display:block;max-width:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</helmet>
+
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.55;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.25 0 0 0 0 0.12 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+<sc-if value="{{ showEnvelope }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="Toca el sello para abrir la invitación" style="position:fixed;inset:0;z-index:100;overflow:hidden;cursor:pointer;background:#F5ECD0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 900ms ease;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
+  <div style="position:absolute;inset:0;background-image:url(assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
+  <div style="position:relative;font-family:'Allura',cursive;font-size:clamp(44px,12vw,60px);line-height:1;color:#55622A;transition:opacity 500ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
+  <div style="position:relative;width:min(84vw,400px);aspect-ratio:1.45;">
+    <div style="position:absolute;inset:0;z-index:1;background:#55632B;box-shadow:0 28px 42px -18px rgba(70,60,20,.5);"></div>
+    <div style="position:absolute;left:6%;right:6%;top:6%;bottom:6%;z-index:2;background:#FBF7EA;border:1px solid rgba(107,122,58,.45);outline:1px solid rgba(107,122,58,.25);outline-offset:-7px;display:flex;flex-direction:column;align-items:center;padding-top:8%;gap:8px;transition:transform 1200ms cubic-bezier(.22,.8,.3,1) 950ms;transform:{{ cardT }};">
+      <img src="assets/monograma-verde.webp" alt="" style="width:22%;height:auto;"></img>
+      <div style="font-size:10px;letter-spacing:.4em;padding-left:.4em;color:#3F4B22;">SAVE THE DATE</div>
+    </div>
+    <div style="position:absolute;inset:0;z-index:3;filter:drop-shadow(0 -2px 3px rgba(30,36,10,.25));">
+      <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(0 0,52% 56%,0 100%);"></div>
+      <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
+      <div style="position:absolute;inset:0;background:#63722F;clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
+    </div>
+    <div style="position:absolute;inset:0;z-index:{{ flapZ }};transform-origin:50% 0;transition:transform 1000ms cubic-bezier(.55,.05,.3,1) 520ms;transform:{{ flapT }};filter:drop-shadow(0 6px 6px rgba(40,40,10,.25));">
+      <div style="position:absolute;inset:0;background:#76863F;clip-path:polygon(0 0,100% 0,50% 62%);"></div>
+    </div>
+    <div data-anim="pulse" style="position:absolute;z-index:6;left:37%;top:calc(62% - 13%*1.45);width:26%;aspect-ratio:1;">
+      <img src="assets/sello.webp" alt="Sello de cera R&amp;M" style="position:absolute;inset:0;width:100%;filter:drop-shadow(0 6px 8px rgba(30,30,0,.4));transition:transform 1100ms cubic-bezier(.5,0,.25,1), opacity 600ms ease 450ms;transform:{{ sealT }};opacity:{{ sealOp }};"></img>
+    </div>
+  </div>
+  <div style="position:relative;font-size:11px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#55622A;text-align:center;transition:opacity 500ms ease;opacity:{{ textOpacity }};">TOCA EL SELLO PARA ABRIR</div>
+</div>
+</sc-if>
+
+<main style="position:relative;overflow:hidden;">
+
+  <header data-screen-label="01b Sobre abierto" style="position:relative;background:#F5ECD0;padding:calc(min(70vw,300px)*.48 + 36px) 24px 64px;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url(assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
+    <div data-parallax="env" style="position:relative;width:min(70vw,300px);aspect-ratio:1.45;margin:0 auto;">
+      <div style="position:absolute;left:0;right:0;top:-62%;height:62%;background:#5E6C31;clip-path:polygon(0 100%,100% 100%,50% 0);"></div>
+      <div style="position:absolute;inset:0;background:#55632B;box-shadow:0 24px 36px -18px rgba(70,60,20,.5);"></div>
+      <div style="position:absolute;left:6%;right:6%;top:6%;bottom:6%;transform:translateY(-58%);background:#FBF7EA;border:1px solid rgba(107,122,58,.45);outline:1px solid rgba(107,122,58,.25);outline-offset:-7px;display:flex;flex-direction:column;align-items:center;padding-top:8%;gap:8px;">
+        <img src="assets/monograma-verde.webp" alt="" style="width:22%;height:auto;"></img>
+        <div style="font-size:9px;letter-spacing:.4em;padding-left:.4em;color:#3F4B22;">SAVE THE DATE</div>
+      </div>
+      <div style="position:absolute;inset:0;filter:drop-shadow(0 -2px 3px rgba(30,36,10,.25));">
+        <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(0 0,52% 56%,0 100%);"></div>
+        <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
+        <div style="position:absolute;inset:0;background:#63722F;clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="02 Portada" style="position:relative;background:#F5ECD0;padding:8px 24px 80px;text-align:center;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
+    <div style="max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;">
+      <h1 data-hero="1" style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,9vw,46px);letter-spacing:.22em;color:#6B7A3A;display:flex;align-items:baseline;justify-content:center;gap:.28em;white-space:nowrap;"><span>SAVE</span><span style="font-family:'Allura',cursive;font-weight:400;font-size:.9em;letter-spacing:0;color:#55622A;">the</span><span>DATE</span></h1>
+      <div data-hero-write="1" style="font-family:'Allura',cursive;font-size:clamp(50px,14vw,70px);line-height:1.1;color:#3F4B22;padding:0 .1em;">{{ c.coupleNames }}</div>
+      <img data-hero="2" src="assets/monograma-verde.webp" alt="Monograma R&amp;M" style="width:100px;height:auto;"></img>
+      <div data-hero="3" style="display:flex;flex-direction:column;gap:12px;">
+        <div style="font-weight:500;font-size:16px;letter-spacing:.34em;padding-left:.34em;color:#3F4B22;">{{ c.dateDisplay }}</div>
+        <div style="font-weight:500;font-size:12px;letter-spacing:.3em;padding-left:.3em;color:#55622A;text-wrap:balance;">{{ c.locationDisplay }}</div>
+      </div>
+      <div style="position:relative;width:100%;max-width:440px;margin-top:28px;">
+        <div style="position:relative;padding:9px;border:1px solid rgba(107,122,58,.55);border-radius:999px 999px 6px 6px;">
+          <div data-hero-arch="1" style="position:relative;aspect-ratio:5/6;border-radius:999px 999px 2px 2px;overflow:hidden;background:#EDE3C4;">
+            <div data-parallax="hero" style="position:absolute;left:0;right:0;top:-10%;bottom:-10%;">
+              <img data-anim="kenburns" src="assets/playa-hero.webp" alt="Acuarela de la playa en Isla de Margarita" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:42% 60%;"></img>
+            </div>
+          </div>
+        </div>
+        <img data-anim="spin" src="assets/sol.webp" alt="" style="position:absolute;left:-14px;top:12%;width:clamp(72px,20vw,100px);opacity:.95;pointer-events:none;"></img>
+        <img data-anim="sway" src="assets/palmera-verde.webp" alt="" style="position:absolute;right:-22px;bottom:-26px;width:clamp(120px,34vw,170px);transform-origin:50% 92%;pointer-events:none;"></img>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Cuenta regresiva" style="position:relative;background:#6B7A3A;padding:72px 20px 80px;text-align:center;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#6B7A3A"></path></svg>
+    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"><img data-anim="spin" src="assets/sol.webp" alt="" loading="lazy" style="position:absolute;left:50%;top:50%;width:380px;margin:-190px 0 0 -190px;opacity:.13;"></img></div>
+    <div data-reveal="1" style="position:relative;max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:24px;">
+      <div style="font-size:12px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#FFF9EA;">FALTAN</div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;">
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.d }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">DÍAS</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.h }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">HORAS</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.m }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">MIN</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.s }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">SEG</div></div>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#F5ECD0;">{{ c.countdownCaption }}</div>
+    </div>
+  </section>
+
+  <section data-screen-label="04 Itinerario" style="position:relative;background:#F5ECD0;padding:64px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
+    <div style="max-width:520px;margin:0 auto;">
+      <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:40px;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">ITINERARIO</div>
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,8vw,36px);letter-spacing:.16em;padding-left:.16em;color:#6B7A3A;">CELEBREMOS JUNTOS</h2>
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:1px;background:#A9B380;"></div><img src="assets/concha.webp" alt="" style="width:26px;"></img><div style="width:48px;height:1px;background:#A9B380;"></div></div>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:26px;">
+        <div style="position:absolute;left:27px;top:28px;bottom:28px;width:1px;background:#6B7A3A;"></div>
+        <sc-for list="{{ c.events }}" as="ev" hint-placeholder-count="3">
+          <div data-reveal="1" style="position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:start;">
+            <div style="position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#F5ECD0;border:1px solid #6B7A3A;box-shadow:0 0 0 5px #F5ECD0;display:flex;align-items:center;justify-content:center;"><img src="{{ ev.iconSrc }}" alt="" style="width:34px;height:34px;object-fit:contain;"></img></div>
+            <div style="background:#FBF7EA;border:1px solid rgba(107,122,58,.45);border-radius:4px;box-shadow:0 14px 30px -22px rgba(40,50,15,.45);padding:20px 20px 22px;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#55622A;">{{ ev.date }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;line-height:1.1;color:#3F4B22;">{{ ev.title }}</div>
+              <div style="font-size:14px;font-weight:500;letter-spacing:.14em;color:#55622A;">{{ ev.time }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.35;color:#3F4B22;text-wrap:pretty;">{{ ev.place }}</div>
+              <sc-if value="{{ ev.hasLink }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ ev.link }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:10px;display:flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;background:#6B7A3A;color:#FBF7EA;font-size:11px;font-weight:500;letter-spacing:.26em;" style-hover="background:#3F4B22;color:#FBF7EA;">CÓMO LLEGAR</a>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="05 Dresscode" style="position:relative;background:#6B7A3A;padding:72px 24px 88px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#6B7A3A"></path></svg>
+    <div data-reveal="1" style="position:relative;max-width:340px;margin:0 auto;border:1px solid rgba(245,236,208,.55);border-radius:999px 999px 6px 6px;padding:64px 28px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <img src="assets/palmera-crema.webp" alt="" loading="lazy" style="width:64px;transform:rotate(-6deg);"></img>
+      <div style="font-size:13px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#FFF9EA;">DRESSCODE</div>
+      <div style="width:36px;height:1px;background:#D99A00;"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,10vw,42px);line-height:1.1;color:#FFF9EA;">{{ c.dresscode }}</div>
+      <sc-if value="{{ hasWhiteNote }}" hint-placeholder-val="{{ true }}">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.35;color:#FFF9EA;">{{ c.whitePartyNote }}</div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section data-screen-label="06 Hoteles" style="position:relative;background:#F5ECD0;padding:64px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#F5ECD0"></path></svg>
+    <div style="position:relative;max-width:520px;margin:0 auto;">
+      <div data-reveal="1" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:30px;">
+        <img src="assets/palmera-verde.webp" alt="" loading="lazy" style="width:54px;transform:rotate(5deg);"></img>
+        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">DÓNDE HOSPEDARSE</div>
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#6B7A3A;text-wrap:balance;">HOTELES RECOMENDADOS</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <sc-for list="{{ hotels }}" as="h" hint-placeholder-count="4">
+          <div data-reveal="1" style="background:#FBF7EA;border:1px solid rgba(107,122,58,.45);border-radius:4px;box-shadow:0 16px 32px -24px rgba(40,50,15,.5);overflow:hidden;">
+            <div style="padding:20px 20px 18px;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#3F4B22;">{{ h.name }}</div>
+              <div style="font-size:13.5px;line-height:1.5;color:#55622A;text-wrap:pretty;">{{ h.zona }}</div>
+            </div>
+            <div style="display:flex;gap:1px;background:rgba(107,122,58,.4);border-top:1px solid rgba(107,122,58,.4);">
+              <sc-if value="{{ h.hasIg }}" hint-placeholder-val="{{ true }}"><a href="{{ h.instagramUrl }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF7EA;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">INSTAGRAM</a></sc-if>
+              <sc-if value="{{ h.hasPhone }}" hint-placeholder-val="{{ false }}"><a href="{{ h.contactLink }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF7EA;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">{{ h.ctaLabel }}</a></sc-if>
+              <a href="{{ h.mapsLink }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF7EA;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">UBICACIÓN</a>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div data-reveal="1" style="margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#3F4B22;text-align:center;"><div style="flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#D99A00;"></div>{{ c.hotelsNote }}</div>
+    </div>
+  </section>
+
+  <section data-screen-label="07 Restaurantes" style="position:relative;background:#6B7A3A;padding:72px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#6B7A3A"></path></svg>
+    
+    <div style="position:relative;max-width:520px;margin:0 auto;">
+      <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:30px;">
+        <img src="assets/concha.webp" alt="" loading="lazy" style="width:46px;transform:rotate(-6deg);"></img>
+        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#FFF9EA;">DÓNDE COMER</div>
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#F5ECD0;text-wrap:balance;">RESTAURANTES RECOMENDADOS</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <sc-for list="{{ restaurants }}" as="r" hint-placeholder-count="4">
+          <div data-reveal="1" style="background:#F5ECD0;border-radius:4px;outline:1px solid rgba(107,122,58,.45);outline-offset:-6px;box-shadow:0 18px 34px -22px rgba(0,0,0,.6);overflow:hidden;">
+            <div style="padding:22px 22px 18px;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#3F4B22;">{{ r.name }}</div>
+              <div style="font-size:13.5px;line-height:1.5;color:#55622A;text-wrap:pretty;">{{ r.zona }}</div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 22px 22px;">
+              <sc-if value="{{ r.hasIg }}" hint-placeholder-val="{{ true }}"><a href="{{ r.instagramUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #6B7A3A;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">INSTAGRAM</a></sc-if>
+              <sc-if value="{{ r.hasPhone }}" hint-placeholder-val="{{ false }}"><a href="{{ r.contactLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #6B7A3A;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">{{ r.ctaLabel }}</a></sc-if>
+              <a href="{{ r.mapsLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #6B7A3A;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">UBICACIÓN</a>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="08 RSVP" style="position:relative;background:#F5ECD0;padding:88px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
+    <div data-reveal="1" style="position:relative;max-width:400px;margin:0 auto;background:#FBF7EA;border:1px solid rgba(107,122,58,.55);outline:1px solid rgba(107,122,58,.25);outline-offset:-9px;border-radius:999px 999px 6px 6px;box-shadow:0 18px 38px -22px rgba(40,50,15,.45);padding:96px 26px 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <img src="assets/sello.webp" alt="" loading="lazy" style="position:absolute;top:-30px;left:50%;width:84px;margin-left:-42px;transform:rotate(-6deg);filter:drop-shadow(0 5px 7px rgba(30,30,0,.3));"></img>
+      <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">RSVP</div>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,32px);line-height:1.2;letter-spacing:.08em;color:#6B7A3A;text-wrap:balance;">{{ c.rsvpTitle }}</h2>
+      <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.45;color:#3F4B22;text-wrap:pretty;">{{ c.rsvpText }}</p>
+      <button type="button" onClick="{{ openForm }}" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;margin-top:14px;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;min-height:58px;border-radius:999px;background:#6B7A3A;color:#FBF7EA;font-size:12px;font-weight:500;letter-spacing:.26em;padding-left:.26em;box-shadow:0 10px 22px -10px rgba(63,75,34,.7);" style-hover="background:#3F4B22;color:#FBF7EA;">CONFIRMAR ASISTENCIA</button>
+    </div>
+  </section>
+
+  <section data-screen-label="09 Regalos" style="position:relative;background:#6B7A3A;padding:72px 24px 88px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#6B7A3A"></path></svg>
+    <div style="max-width:520px;margin:0 auto;">
+      <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:28px;">
+        <img src="assets/sol-crema.webp" alt="" loading="lazy" style="width:56px;transform:rotate(6deg);"></img>
+        <div style="font-size:13px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#FFF9EA;">REGALOS</div>
+        <div style="width:36px;height:1px;background:#D99A00;"></div>
+        <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5;color:#FFF9EA;text-wrap:pretty;">{{ c.giftsText }}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <sc-for list="{{ zelle }}" as="z" hint-placeholder-count="2">
+          <div data-reveal="1" style="background:#F5ECD0;border-radius:4px;box-shadow:0 16px 30px -22px rgba(0,0,0,.55);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
+              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#55622A;">{{ z.label }}</div>
+              <div style="font-size:15.5px;color:#3F4B22;overflow-wrap:anywhere;">{{ z.value }}</div>
+            </div>
+            <button type="button" onClick="{{ z.onCopy }}" style="flex-shrink:0;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #3F4B22;background:{{ z.bg }};color:{{ z.fg }};font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.2em;cursor:pointer;transition:background 200ms,color 200ms;">{{ z.cta }}</button>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="10 Cierre" style="position:relative;background:#F5ECD0;padding:96px 24px 104px;text-align:center;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
+    <div style="position:absolute;inset:0;background-image:url(assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
+    <div data-reveal="1" style="position:relative;max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px;">
+      <div style="font-family:'Allura',cursive;font-size:clamp(56px,16vw,80px);line-height:1;color:#55622A;">{{ c.closing }}</div>
+      <img src="assets/monograma-verde.webp" alt="Monograma R&amp;M" loading="lazy" style="width:116px;height:auto;"></img>
+      <div style="font-weight:500;font-size:13px;letter-spacing:.36em;padding-left:.36em;color:#55622A;">{{ c.dateDisplay }}</div>
+    </div>
+  </section>
+</main>
+
+<sc-if value="{{ formOpen }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="08b Formulario RSVP" onClick="{{ closeForm }}" style="position:fixed;inset:0;z-index:150;background:rgba(40,48,18,.6);display:flex;align-items:flex-end;justify-content:center;padding:12px 0 0;">
+  <div role="dialog" aria-modal="true" aria-label="Confirmar asistencia" onClick="{{ stop }}" style="position:relative;width:100%;max-width:480px;max-height:94vh;overflow-y:auto;background:#FBF7EA;border-radius:18px 18px 0 0;box-shadow:0 -10px 40px rgba(30,36,10,.35);padding:34px 22px 28px;">
+    <button type="button" onClick="{{ closeForm }}" aria-label="Cerrar" style="position:absolute;top:10px;right:10px;width:44px;height:44px;border:none;background:transparent;color:#3F4B22;font-size:28px;line-height:1;cursor:pointer;font-family:'Cormorant Garamond',serif;">×</button>
+    <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:30px 0 20px;">
+        <img src="assets/sello.webp" alt="" style="width:90px;filter:drop-shadow(0 4px 6px rgba(30,30,0,.25));"></img>
+        <div style="font-family:'Allura',cursive;font-size:54px;line-height:1;color:#55622A;">¡Gracias!</div>
+        <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.45;color:#3F4B22;text-wrap:pretty;">{{ sentMsg }}</p>
+        <button type="button" onClick="{{ closeForm }}" style="margin-top:8px;min-height:48px;padding:0 28px;border-radius:999px;border:1px solid #6B7A3A;background:transparent;color:#3F4B22;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.24em;cursor:pointer;">VOLVER A LA INVITACIÓN</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ formEditing }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
+          <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">RSVP</div>
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.15;color:#6B7A3A;">Confirma tu asistencia</h2>
+          <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#3F4B22;">Completa tus datos y guardaremos tu lugar en la celebración.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">NOMBRE *<input type="text" autocomplete="given-name" value="{{ f.nombre }}" onChange="{{ on.nombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">APELLIDO *<input type="text" autocomplete="family-name" value="{{ f.apellido }}" onChange="{{ on.apellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">TELÉFONO *<input type="tel" autocomplete="tel" placeholder="+58 412 000 0000" value="{{ f.telefono }}" onChange="{{ on.telefono }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">¿NOS ACOMPAÑAS? *</div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
+            <button type="button" onClick="{{ attendYes }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #6B7A3A;background:{{ yesBg }};color:{{ yesFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">¡Sí, ahí estaré!</button>
+            <button type="button" onClick="{{ attendNo }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #6B7A3A;background:{{ noBg }};color:{{ noFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">No podré asistir</button>
+          </div>
+        </div>
+        <sc-if value="{{ isAttending }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px;border:1px dashed rgba(107,122,58,.6);border-radius:10px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#3F4B22;">¿Vienes acompañado?</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <button type="button" onClick="{{ acompNo }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #6B7A3A;background:{{ acNoBg }};color:{{ acNoFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">Sin acompañante</button>
+            <button type="button" onClick="{{ acompSi }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #6B7A3A;background:{{ acSiBg }};color:{{ acSiFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">+1 acompañante</button>
+          </div>
+          <sc-if value="{{ hasAcomp }}" hint-placeholder-val="{{ false }}">
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
+              <input type="text" placeholder="Nombre" aria-label="Nombre del acompañante" value="{{ f.acompNombre }}" onChange="{{ on.acompNombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;color:#3F4B22;outline-color:#6B7A3A;"></input>
+              <input type="text" placeholder="Apellido" aria-label="Apellido del acompañante" value="{{ f.acompApellido }}" onChange="{{ on.acompApellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;color:#3F4B22;outline-color:#6B7A3A;"></input>
+            </div>
+          </sc-if>
+        </div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">¿DESDE DÓNDE NOS ACOMPAÑAS? <span style="font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:0;font-size:14px;">(opcional)</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <sc-for list="{{ origins }}" as="o" hint-placeholder-count="3">
+              <button type="button" onClick="{{ o.onClick }}" style="min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #6B7A3A;background:{{ o.bg }};color:{{ o.fg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">{{ o.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">UNAS PALABRAS PARA LOS NOVIOS<textarea rows="3" placeholder="Un deseo, un consejo, un recuerdo…" value="{{ f.palabras }}" onChange="{{ on.palabras }}" style="padding:12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:0;color:#3F4B22;resize:vertical;outline-color:#6B7A3A;"></textarea></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">LA CANCIÓN QUE NO PUEDE FALTAR EN LA PISTA<input type="text" placeholder="Canción · Artista" value="{{ f.cancionPista }}" onChange="{{ on.cancionPista }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">UNA CANCIÓN QUE TE RECUERDE A NOSOTROS<input type="text" placeholder="Canción · Artista" value="{{ f.cancionNovios }}" onChange="{{ on.cancionNovios }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+        <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="font-size:13.5px;color:#9A3B1E;text-align:center;">{{ formError }}</div>
+        </sc-if>
+        <button type="button" onClick="{{ submitForm }}" style="min-height:56px;border:none;border-radius:999px;background:#6B7A3A;color:#FBF7EA;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.26em;cursor:pointer;box-shadow:0 10px 22px -10px rgba(63,75,34,.7);" style-hover="background:#3F4B22;">ENVIAR CONFIRMACIÓN</button>
+        <div style="font-size:12.5px;line-height:1.5;color:#3F4B22;text-align:center;">Se abrirá WhatsApp con tus respuestas listas para enviar a nuestra wedding planner.</div>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ hasMusic }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ toggleMusic }}" aria-label="{{ musicAria }}" aria-pressed="{{ playing }}" style="position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;width:52px;height:52px;border-radius:50%;border:1px solid rgba(245,236,208,.45);background:#6B7A3A;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:3px;box-shadow:0 10px 22px -8px rgba(30,36,12,.6);transition:opacity 600ms ease;opacity:{{ musicOpacity }};pointer-events:{{ musicPointer }};" style-hover="background:#3F4B22;">
+  <div data-eq="1" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
+  <div data-eq="2" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
+  <div data-eq="3" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
+  <div data-eq="4" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
+</button></sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;skipEnvelope&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  // ================= CONFIGURACIÓN: todos los textos, fechas y links =================
+  CONFIG = {
+    coupleNames: 'Ronald & Mafe',
+    dateDisplay: '03 | 04 | 2027',
+    locationDisplay: 'ISLA DE MARGARITA, VENEZUELA',
+    weddingDateISO: '2027-04-03T15:30:00-04:00', // hora de Venezuela (UTC-4)
+    countdownCaption: 'para decir “sí, acepto”',
+    events: [
+      { icon: 'concha', title: 'White Party', date: 'JUEVES 01 · ABRIL · 2027', time: '6:00 PM', place: 'Lugar por confirmar', link: '' },
+      { icon: 'palmera', title: 'Ceremonia', date: 'SÁBADO 03 · ABRIL · 2027', time: '3:30 PM', place: 'Catedral Nuestra Señora de la Asunción', link: '[LINK_GOOGLE_MAPS_CATEDRAL]' },
+      { icon: 'sol', title: 'Celebración', date: 'SÁBADO 03 · ABRIL · 2027', time: '6:00 PM', place: 'Downtown Beach Margarita, Isla de Margarita, Venezuela', link: '' },
+    ],
+    dresscode: 'Vestimenta formal',
+    whitePartyNote: '', // ej. 'White Party del jueves: total white' — '' lo oculta
+    // instagram: usuario sin @ ('' oculta). phone: '' oculta Contacto; whatsapp:true abre WhatsApp. maps: '' = búsqueda por nombre.
+    hotels: [
+      { name: 'Tibisay', zona: 'Pampatar · frente al mar', instagram: 'tibisayhotelmargarita', phone: '+58 424 8610339', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Tibisay%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
+      { name: 'Aria by LD', zona: 'Pampatar · hotel boutique solo adultos', instagram: 'ariapampatar.byld', phone: '+58 412 8283638', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Aria%20by%20LD%20Hotel%20Boutique%2C%20Pampatar' },
+      { name: 'Hotel Margarita Real', zona: 'Pampatar · Playa El Ángel', instagram: 'hotelmargaritareal', phone: '+58 424 8995183', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Hotel%20Margarita%20Real%2C%20Pampatar' },
+      { name: 'Lidotel Margarita', zona: 'Pampatar', instagram: 'lidotel.margarita', phone: '+58 424 1593832', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Lidotel%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
+    ],
+    hotelsNote: 'Te recomendamos reservar con anticipación.',
+    restaurants: [
+      { name: 'Gaia Ristorante', zona: 'Porlamar · cocina italiana', instagram: 'gaiatrattoria', phone: '+58 424 8248844', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Gaia%20Ristorante%2C%20Calle%20Campos%2C%20Porlamar%2C%20Isla%20de%20Margarita' },
+      { name: 'La Forneria Margarita', zona: 'Pampatar · panadería italiana artesanal', instagram: 'laforneriamgta', phone: '+58 412 2529779', whatsapp: true, maps: '' },
+      { name: 'Maroush', zona: 'Pampatar · fusión de culturas y sabores', instagram: 'maroushrestaurante', contactUrl: 'https://linktr.ee/Maroushmgt', contactLabel: 'RESERVAR', maps: 'https://www.google.com/maps/search/?api=1&query=Maroush%20Restaurante%2C%20Playa%20El%20%C3%81ngel%2C%20Pampatar' },
+      { name: 'Francelina', zona: 'Cocina italiana', instagram: 'francelina.ve', phone: '+58 412 2595133', whatsapp: true, maps: '' },
+    ],
+    rsvpTitle: 'POR FAVOR CONFIRMA TU ASISTENCIA',
+    rsvpText: '¡Nos hace muy feliz que puedas acompañarnos!',
+    whatsappPhone: '58XXXXXXXXXX', // [LINK_WHATSAPP_WEDDING_PLANNER] — solo números, con código de país
+    whatsappMessage: 'Hola, confirmo mi asistencia a la boda de Ronald & Mafe.',
+    giftsText: 'El mayor regalo es contar con su presencia este día y poder celebrar juntos. Sin embargo, si deseas tener un detalle con nosotros, te dejaremos la información de nuestros datos.',
+    zelle: [
+      { label: 'ZELLE · MAFE', value: 'mafeazcunes@gmail.com' },
+      { label: 'ZELLE · RONALD', value: '[ZELLE_RONALD]' },
+    ],
+    closing: '¡Te esperamos!',
+    musicUrl: '', // Sin música por ahora. Para activarla: 'assets/cancion.mp3' (≤3 MB, en loop)
+    musicVolume: 0.6,
+  };
+  // ====================================================================================
+
+  state = { stage: 0, now: Date.now(), copied: null, playing: false, formOpen: false, formSent: false, formError: '',
+    f: { nombre: '', apellido: '', telefono: '', asiste: '', acomp: '', acompNombre: '', acompApellido: '', origen: '', palabras: '', cancionPista: '', cancionNovios: '' } };
+
+  // ---------------- Formulario RSVP → WhatsApp ----------------
+  setField = (k, v) => this.setState(s => ({ f: { ...s.f, [k]: v }, formError: '' }));
+  fieldHandlers = ['nombre', 'apellido', 'telefono', 'acompNombre', 'acompApellido', 'palabras', 'cancionPista', 'cancionNovios']
+    .reduce((o, k) => (o[k] = e => this.setField(k, e.target.value), o), {});
+  openForm = () => { this.setState({ formOpen: true, formSent: false }); document.body.style.overflow = 'hidden'; };
+  closeForm = () => { this.setState({ formOpen: false }); document.body.style.overflow = ''; };
+  submitForm = () => {
+    const f = this.state.f, C = this.CONFIG;
+    if (!f.nombre.trim() || !f.apellido.trim() || !f.telefono.trim() || !f.asiste)
+      return this.setState({ formError: 'Por favor completa nombre, apellido, teléfono y tu confirmación.' });
+    if (f.asiste === 'si' && f.acomp === 'si' && (!f.acompNombre.trim() || !f.acompApellido.trim()))
+      return this.setState({ formError: 'Indica el nombre y apellido de tu acompañante.' });
+    const lines = [
+      `• Nombre: ${f.nombre.trim()} ${f.apellido.trim()}`,
+      `• Teléfono: ${f.telefono.trim()}`,
+      `• Asistencia: ${f.asiste === 'si' ? '¡Sí, ahí estaré!' : 'No podré asistir'}`,
+      f.asiste === 'si' && (f.acomp === 'si' ? `• Acompañante: ${f.acompNombre.trim()} ${f.acompApellido.trim()}` : '• Sin acompañante'),
+      f.origen && `• Viene desde: ${f.origen}`,
+      f.palabras.trim() && `• Palabras para los novios: ${f.palabras.trim()}`,
+      f.cancionPista.trim() && `• Canción para la pista: ${f.cancionPista.trim()}`,
+      f.cancionNovios.trim() && `• Canción que me recuerda a ustedes: ${f.cancionNovios.trim()}`,
+    ].filter(Boolean);
+    window.open(`https://wa.me/${C.whatsappPhone.replace(/\D/g, '')}?text=${encodeURIComponent(C.whatsappMessage + '\n\n' + lines.join('\n'))}`, '_blank');
+    this.setState({ formSent: true });
+  };
+  anims = []; timeouts = [];
+  q = s => Array.from(document.querySelectorAll(s));
+
+  componentDidMount() {
+    this.reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    this.setupLoops();
+    this.setupIntro();
+    this.setupReveal();
+    if (!this.reduced) { this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(this.parallax); }; window.addEventListener('scroll', this.onScroll, { passive: true }); }
+    this.onVis = () => this.handleVisibility(); document.addEventListener('visibilitychange', this.onVis);
+    if (this.props.skipEnvelope) this.skip(); else document.body.style.overflow = 'hidden';
+  }
+  componentDidUpdate(prev) {
+    if (!(prev && prev.skipEnvelope) && this.props.skipEnvelope && this.state.stage < 3) this.skip();
+    if (this._lastPlaying !== this.state.playing) { this._lastPlaying = this.state.playing; (this.eq || []).forEach(a => this.state.playing ? a.play() : a.pause()); }
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer); this.timeouts.forEach(clearTimeout); this.anims.forEach(a => a.cancel());
+    this.io && this.io.disconnect(); window.removeEventListener('scroll', this.onScroll);
+    document.removeEventListener('visibilitychange', this.onVis); document.body.style.overflow = '';
+    if (this.audio) this.audio.pause();
+  }
+  skip() { this.setState({ stage: 3 }); document.body.style.overflow = ''; this.playIntro(); this.startObserving(); }
+
+  // Animaciones continuas (Web Animations API → no se reinician con cada render)
+  setupLoops() {
+    const loop = (sel, kf, o) => this.q(sel).map(el => { const a = el.animate(kf, { iterations: Infinity, ...o }); this.anims.push(a); return a; });
+    this.eq = this.q('[data-eq]').map((el, i) => { const a = el.animate([{ transform: 'scaleY(.25)' }, { transform: 'scaleY(1)' }], { duration: [520, 760, 430, 640][i], direction: 'alternate', iterations: Infinity, easing: 'ease-in-out' }); a.pause(); a.currentTime = 0; return a; });
+    if (this.reduced) return;
+    this.pulse = loop('[data-anim="pulse"]', [{ transform: 'scale(1)' }, { transform: 'scale(1.07)' }], { duration: 1500, direction: 'alternate', easing: 'ease-in-out' });
+    loop('[data-anim="kenburns"]', [{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }], { duration: 20000, direction: 'alternate', easing: 'ease-in-out' });
+    loop('[data-anim="sway"]', [{ transform: 'rotate(-2deg)' }, { transform: 'rotate(2deg)' }], { duration: 3000, direction: 'alternate', easing: 'ease-in-out' });
+    loop('[data-anim="spin"]', [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 120000, easing: 'linear' });
+  }
+
+  // Entrada de la portada: revelado en arco + B/N → color + textos escalonados + trazo del script
+  setupIntro() {
+    this.intro = [];
+    if (this.reduced) return;
+    const add = (el, kf, o) => { const a = el.animate(kf, { fill: 'both', easing: 'cubic-bezier(.2,.7,.2,1)', ...o }); a.pause(); a.currentTime = 0; this.intro.push(a); };
+    const order = { 1: 0, 2: 2, 3: 3 };
+    this.q('[data-hero]').forEach(el => add(el, [{ opacity: 0, transform: 'translateY(18px)' }, { opacity: 1, transform: 'none' }], { duration: 1000, delay: 250 + order[el.dataset.hero] * 260 }));
+    this.q('[data-hero-write]').forEach(el => add(el, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 -5% 0 0)' }], { duration: 2000, delay: 520, easing: 'cubic-bezier(.45,.05,.35,1)' }));
+    this.q('[data-hero-arch]').forEach(el => {
+      add(el, [{ clipPath: 'ellipse(0% 0% at 50% 55%)' }, { clipPath: 'ellipse(85% 85% at 50% 55%)' }], { duration: 2000, delay: 900 });
+      add(el, [{ filter: 'grayscale(1) opacity(.45)' }, { filter: 'grayscale(0) opacity(1)' }], { duration: 3000, delay: 1300, easing: 'ease-out' });
+    });
+  }
+  playIntro() { (this.intro || []).forEach(a => a.play()); }
+
+  parallax = () => {
+    this.raf = null;
+    const y = window.scrollY || 0;
+    this.q('[data-parallax="env"]').forEach(el => { el.style.translate = `0 ${y * 0.45}px`; el.style.opacity = String(Math.max(0, 1 - y / 360)); });
+    this.q('[data-parallax="hero"]').forEach(el => { el.style.translate = `0 ${Math.min(y * 0.12, 48)}px`; });
+  };
+
+  setupReveal() {
+    this.revealEls = this.q('[data-reveal]');
+    if (this.reduced || !('IntersectionObserver' in window)) return;
+    this.revealEls.forEach(el => { el.style.opacity = '0'; el.style.translate = '0 24px'; el.style.transition = 'opacity 900ms ease, translate 900ms cubic-bezier(.2,.7,.2,1)'; });
+    this.io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.translate = '0 0'; this.io.unobserve(e.target); }
+    }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }
+  startObserving() { if (this.io) this.revealEls.forEach(el => this.io.observe(el)); }
+
+  // Sobre: 1) solapa se abre + sello se parte + tarjeta sube  2) se desvanece y queda el sobre abierto arriba
+  openEnvelope = () => {
+    if (this.state.stage > 0) return;
+    this.manualPaused = false;
+    this.playMusic(3000); // el toque del invitado habilita el audio
+    (this.pulse || []).forEach(a => a.cancel());
+    const t = this.reduced ? [60, 120] : [2500, 3400];
+    this.setState({ stage: 1 });
+    this.timeouts.push(setTimeout(() => { window.scrollTo(0, 0); document.body.style.overflow = ''; this.setState({ stage: 2 }); this.playIntro(); this.startObserving(); }, t[0]));
+    this.timeouts.push(setTimeout(() => this.setState({ stage: 3 }), t[1]));
+  };
+
+  // ---------------- Música ----------------
+  initAudio() {
+    if (this.audio || !this.CONFIG.musicUrl) return;
+    const a = new Audio(); a.loop = true; a.preload = 'auto'; a.volume = 0;
+    a.addEventListener('error', () => { this.audioFailed = true; this.setState({ playing: false }); });
+    a.src = this.CONFIG.musicUrl; this.audio = a;
+  }
+  fadeTo(target, ms, done) {
+    const a = this.audio; if (!a) return;
+    cancelAnimationFrame(this.fadeRaf);
+    const from = a.volume, t0 = performance.now();
+    const step = t => { const k = Math.min(1, (t - t0) / ms); try { a.volume = from + (target - from) * k; } catch (e) {} if (k < 1) this.fadeRaf = requestAnimationFrame(step); else if (done) done(); };
+    this.fadeRaf = requestAnimationFrame(step);
+  }
+  playMusic(ms) {
+    this.initAudio(); const a = this.audio; if (!a) return;
+    let p; try { p = a.play(); } catch (e) { return this.setState({ playing: false }); }
+    Promise.resolve(p).then(() => { this.setState({ playing: true }); this.fadeTo(this.CONFIG.musicVolume, ms); }).catch(() => this.setState({ playing: false }));
+  }
+  pauseMusic(ms) { const a = this.audio; if (!a) return; this.setState({ playing: false }); this.fadeTo(0, ms, () => a.pause()); }
+  toggleMusic = () => {
+    if (this.state.playing) { this.manualPaused = true; this.pauseMusic(700); }
+    else { this.manualPaused = false; if (this.audio && this.audioFailed) { this.audio = null; this.audioFailed = false; } this.playMusic(1500); }
+  };
+  handleVisibility() {
+    if (document.hidden) { if (this.state.playing && this.audio) { this.autoPaused = true; this.audio.pause(); this.setState({ playing: false }); } }
+    else if (this.autoPaused && !this.manualPaused) { this.autoPaused = false; if (this.audio) this.audio.volume = 0; this.playMusic(1500); }
+  }
+
+  copy = (key, text) => {
+    const done = () => { this.setState({ copied: key }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: null }), 1800); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, () => this.fallbackCopy(text, done));
+    else this.fallbackCopy(text, done);
+  };
+  fallbackCopy(text, done) {
+    const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} ta.remove(); done();
+  }
+
+  countdown() {
+    const s = Math.floor(Math.max(0, new Date(this.CONFIG.weddingDateISO).getTime() - this.state.now) / 1000);
+    const p = n => String(n).padStart(2, '0');
+    return { d: p(Math.floor(s / 86400)), h: p(Math.floor(s / 3600) % 24), m: p(Math.floor(s / 60) % 60), s: p(s % 60) };
+  }
+
+  renderVals() {
+    const C = this.CONFIG, st = this.state.stage, open = st >= 1;
+    const icons = { concha: 'assets/concha-verde.webp', palmera: 'assets/palmera-verde.webp', sol: 'assets/sol-verde.webp' };
+    const list = arr => arr.map(x => {
+      const ig = (x.instagram || '').replace(/^@/, ''), tel = (x.phone || '').replace(/\D/g, '');
+      return { ...x, hasIg: !!ig, instagramUrl: `https://instagram.com/${ig}`, hasPhone: !!(x.phone || x.contactUrl), ctaLabel: x.contactLabel || 'CONTACTO',
+        contactLink: x.contactUrl || (x.whatsapp ? `https://wa.me/${tel}` : `tel:+${tel}`),
+        mapsLink: x.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.name + ', Isla de Margarita, Venezuela')}` };
+    });
+    const musicVisible = st >= 2 || !!this.props.skipEnvelope;
+    const f = this.state.f, pick = (on, c) => on ? [c, '#FBF7EA'] : ['transparent', c], G = '#3F4B22';
+    const [yesBg, yesFg] = pick(f.asiste === 'si', G), [noBg, noFg] = pick(f.asiste === 'no', G);
+    const [acNoBg, acNoFg] = pick(f.acomp === 'no', G), [acSiBg, acSiFg] = pick(f.acomp === 'si', G);
+    return {
+      hasMusic: !!C.musicUrl,
+      formOpen: this.state.formOpen, formSent: this.state.formSent, formEditing: !this.state.formSent,
+      formError: this.state.formError, f, on: this.fieldHandlers,
+      openForm: this.openForm, closeForm: this.closeForm, submitForm: this.submitForm, stop: e => e.stopPropagation(),
+      attendYes: () => this.setField('asiste', 'si'), attendNo: () => this.setField('asiste', 'no'), yesBg, yesFg, noBg, noFg,
+      isAttending: f.asiste === 'si', hasAcomp: f.acomp === 'si',
+      acompNo: () => this.setField('acomp', 'no'), acompSi: () => this.setField('acomp', 'si'), acNoBg, acNoFg, acSiBg, acSiFg,
+      origins: ['Vivo en Margarita', 'Desde otra ciudad de Venezuela', 'Desde el exterior'].map(l => {
+        const [bg, fg] = pick(f.origen === l, G); return { label: l, bg, fg, onClick: () => this.setField('origen', f.origen === l ? '' : l) };
+      }),
+      sentMsg: f.asiste === 'no' ? `${f.nombre}, te vamos a extrañar. Gracias por avisarnos.` : `${f.nombre}, ya estás en nuestra lista. ¡Nos vemos en Margarita!`,
+      c: { ...C, events: C.events.map(e => ({ ...e, iconSrc: icons[e.icon] || icons.concha, hasLink: !!e.link })) },
+      showEnvelope: st < 3 && !this.props.skipEnvelope,
+      openEnvelope: this.openEnvelope,
+      flapZ: open ? 0 : 5,
+      flapT: open ? 'perspective(1200px) rotateX(180deg)' : 'perspective(1200px) rotateX(0deg)',
+      sealT: open ? 'translateY(115%) scale(.94)' : 'none',
+      sealOp: open ? 0 : 1,
+      cardT: st >= 2 ? 'translateY(-58%) scale(1.9)' : open ? 'translateY(-58%)' : 'translateY(0)',
+      textOpacity: open ? 0 : 1,
+      envOpacity: st >= 2 ? 0 : 1, envPointer: st >= 2 ? 'none' : 'auto',
+      cd: this.countdown(),
+      hasWhiteNote: !!C.whitePartyNote,
+      hotels: list(C.hotels), restaurants: list(C.restaurants),
+      waLink: `https://wa.me/${C.whatsappPhone.replace(/\D/g, '')}?text=${encodeURIComponent(C.whatsappMessage)}`,
+      zelle: C.zelle.map((z, i) => {
+        const on = this.state.copied === i;
+        return { ...z, onCopy: () => this.copy(i, z.value), cta: on ? 'COPIADO ✓' : 'COPIAR', bg: on ? '#3F4B22' : 'transparent', fg: on ? '#F5ECD0' : '#3F4B22' };
+      }),
+      playing: this.state.playing, toggleMusic: this.toggleMusic,
+      musicAria: this.state.playing ? 'Pausar música' : 'Reproducir música',
+      musicOpacity: musicVisible ? 1 : 0, musicPointer: musicVisible ? 'auto' : 'none',
+    };
+  }
+}
+</script>
+</body>
+</html>
