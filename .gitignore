@@ -1,3 +1,7 @@
 uploads/
 .thumbnail
 .vercel
+
+.vercel
+
+node_modules/

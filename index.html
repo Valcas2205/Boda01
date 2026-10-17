@@ -15,128 +15,132 @@
 <meta property="og:description" content="Te invitamos a celebrar nuestra boda en Isla de Margarita, Venezuela.">
 <meta property="og:image" content="assets/og-playa.png">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#6B7A3A">
+<meta name="theme-color" content="#F4DDB8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Allura&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/sello.webp">
 <style>
+.snap::-webkit-scrollbar{display:none}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;color:#3F4B22;font-family:'Jost',sans-serif;background:#F5ECD0;-webkit-font-smoothing:antialiased}
-a{color:#55622A;text-decoration:none}
-a:hover{color:#3F4B22}
+body{margin:0;color:#5E5340;font-family:'Jost',sans-serif;background:#F4DDB8;-webkit-font-smoothing:antialiased}
+a{color:#786B50;text-decoration:none}
+a:hover{color:#5E5340}
 img{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </helmet>
 
-<div aria-hidden="true" style="position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.55;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.25 0 0 0 0 0.12 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.55;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.28 0 0 0 0 0.16 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
 
 <sc-if value="{{ showEnvelope }}" hint-placeholder-val="{{ true }}">
-<div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="Toca el sello para abrir la invitación" style="position:fixed;inset:0;z-index:100;overflow:hidden;cursor:pointer;background:#F5ECD0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 900ms ease;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
+<div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="Toca el sello para abrir la invitación" style="position:fixed;inset:0;z-index:100;overflow:hidden;cursor:pointer;background:#F4DDB8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 900ms ease;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
   <div style="position:absolute;inset:0;background-image:url(assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
-  <div style="position:relative;font-family:'Allura',cursive;font-size:clamp(44px,12vw,60px);line-height:1;color:#55622A;transition:opacity 500ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
+  <div style="position:relative;font-family:'Allura',cursive;font-size:clamp(44px,12vw,60px);line-height:1;color:#786B50;transition:opacity 500ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
   <div style="position:relative;width:min(84vw,400px);aspect-ratio:1.45;">
-    <div style="position:absolute;inset:0;z-index:1;background:#55632B;box-shadow:0 28px 42px -18px rgba(70,60,20,.5);"></div>
-    <div style="position:absolute;left:6%;right:6%;top:6%;bottom:6%;z-index:2;background:#FBF7EA;border:1px solid rgba(107,122,58,.45);outline:1px solid rgba(107,122,58,.25);outline-offset:-7px;display:flex;flex-direction:column;align-items:center;padding-top:8%;gap:8px;transition:transform 1200ms cubic-bezier(.22,.8,.3,1) 950ms;transform:{{ cardT }};">
-      <img src="assets/monograma-verde.webp" alt="" style="width:22%;height:auto;"></img>
-      <div style="font-size:10px;letter-spacing:.4em;padding-left:.4em;color:#3F4B22;">SAVE THE DATE</div>
+    <div style="position:absolute;inset:0;z-index:1;background:#9CCBE0;box-shadow:0 28px 42px -18px rgba(74,65,48,.5);"></div>
+    <div style="position:absolute;left:6%;right:6%;top:6%;bottom:6%;z-index:2;background:#FBF1DC;border:1px solid rgba(148,139,102,.45);outline:1px solid rgba(148,139,102,.25);outline-offset:-7px;display:flex;flex-direction:column;align-items:center;padding-top:8%;gap:8px;transition:transform 1200ms cubic-bezier(.22,.8,.3,1) 950ms;transform:{{ cardT }};">
+      <img src="assets/sello.webp" alt="" style="width:26%;height:auto;filter:drop-shadow(0 3px 4px rgba(50,42,28,.3));"></img>
+      <div style="font-size:10px;letter-spacing:.4em;padding-left:.4em;color:#5E5340;">SAVE THE DATE</div>
     </div>
-    <div style="position:absolute;inset:0;z-index:3;filter:drop-shadow(0 -2px 3px rgba(30,36,10,.25));">
-      <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(0 0,52% 56%,0 100%);"></div>
-      <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
-      <div style="position:absolute;inset:0;background:#63722F;clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
+    <div style="position:absolute;inset:0;z-index:3;filter:drop-shadow(0 -2px 3px rgba(50,42,28,.25));">
+      <div style="position:absolute;inset:0;background:#B4D9E9;clip-path:polygon(0 0,52% 56%,0 100%);"></div>
+      <div style="position:absolute;inset:0;background:#B4D9E9;clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
+      <div style="position:absolute;inset:0;background:#A3CFE3;clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
     </div>
     <div style="position:absolute;inset:0;z-index:{{ flapZ }};transform-origin:50% 0;transition:transform 1000ms cubic-bezier(.55,.05,.3,1) 520ms;transform:{{ flapT }};filter:drop-shadow(0 6px 6px rgba(40,40,10,.25));">
-      <div style="position:absolute;inset:0;background:#76863F;clip-path:polygon(0 0,100% 0,50% 62%);"></div>
+      <div style="position:absolute;inset:0;background:#C6E3F0;clip-path:polygon(0 0,100% 0,50% 62%);"></div>
     </div>
     <div data-anim="pulse" style="position:absolute;z-index:6;left:37%;top:calc(62% - 13%*1.45);width:26%;aspect-ratio:1;">
-      <img src="assets/sello.webp" alt="Sello de cera R&amp;M" style="position:absolute;inset:0;width:100%;filter:drop-shadow(0 6px 8px rgba(30,30,0,.4));transition:transform 1100ms cubic-bezier(.5,0,.25,1), opacity 600ms ease 450ms;transform:{{ sealT }};opacity:{{ sealOp }};"></img>
+      <img src="assets/sello.webp" alt="Sello de cera R&amp;M" style="position:absolute;inset:0;width:100%;filter:drop-shadow(0 6px 8px rgba(60,50,30,.4));transition:transform 1100ms cubic-bezier(.5,0,.25,1), opacity 600ms ease 450ms;transform:{{ sealT }};opacity:{{ sealOp }};"></img>
     </div>
   </div>
-  <div style="position:relative;font-size:11px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#55622A;text-align:center;transition:opacity 500ms ease;opacity:{{ textOpacity }};">TOCA EL SELLO PARA ABRIR</div>
+  <div style="position:relative;font-size:11px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#786B50;text-align:center;transition:opacity 500ms ease;opacity:{{ textOpacity }};">TOCA EL SELLO PARA ABRIR</div>
 </div>
 </sc-if>
 
 <main style="position:relative;overflow:hidden;">
 
-  <header data-screen-label="01b Sobre abierto" style="position:relative;background:#F5ECD0;padding:calc(min(70vw,300px)*.48 + 36px) 24px 64px;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:url(assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
-    <div data-parallax="env" style="position:relative;width:min(70vw,300px);aspect-ratio:1.45;margin:0 auto;">
-      <div style="position:absolute;left:0;right:0;top:-62%;height:62%;background:#5E6C31;clip-path:polygon(0 100%,100% 100%,50% 0);"></div>
-      <div style="position:absolute;inset:0;background:#55632B;box-shadow:0 24px 36px -18px rgba(70,60,20,.5);"></div>
-      <div style="position:absolute;left:6%;right:6%;top:6%;bottom:6%;transform:translateY(-58%);background:#FBF7EA;border:1px solid rgba(107,122,58,.45);outline:1px solid rgba(107,122,58,.25);outline-offset:-7px;display:flex;flex-direction:column;align-items:center;padding-top:8%;gap:8px;">
-        <img src="assets/monograma-verde.webp" alt="" style="width:22%;height:auto;"></img>
-        <div style="font-size:9px;letter-spacing:.4em;padding-left:.4em;color:#3F4B22;">SAVE THE DATE</div>
+  <header data-screen-label="01b Sobre abierto" style="position:relative;background:#F4DDB8;padding:calc(min(84vw,440px)*.5 + 56px) 24px 104px;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url(assets/patron-conchas-dorado.webp);background-size:360px;opacity:.3;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 52%,transparent 18%,#000 80%);mask-image:radial-gradient(ellipse 60% 70% at 50% 52%,transparent 18%,#000 80%);"></div>
+    <div style="position:absolute;left:50%;top:46%;width:min(150vw,900px);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(255,248,234,.75),rgba(255,248,234,0));pointer-events:none;"></div>
+    <div data-parallax="env" style="position:relative;width:min(84vw,440px);aspect-ratio:1.45;margin:0 auto;">
+      <div aria-hidden="true" style="position:absolute;left:4%;right:4%;bottom:-9%;height:14%;background:radial-gradient(closest-side,rgba(74,65,48,.38),rgba(74,65,48,0));filter:blur(6px);"></div>
+      <div style="position:absolute;left:0;right:0;top:-62%;height:62%;background:linear-gradient(180deg,#C6E3F0,#A9D2E5);clip-path:polygon(0 100%,100% 100%,50% 0);"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,#9CCBE0,#8DC0D8);"></div>
+      <div style="position:absolute;left:7%;right:7%;top:5%;bottom:7%;transform:translateY(-62%);background:linear-gradient(180deg,#FFFCF4,#FDF6E8);border:1px solid rgba(148,139,102,.5);outline:1px solid rgba(148,139,102,.28);outline-offset:-8px;box-shadow:0 10px 24px -14px rgba(74,65,48,.45);display:flex;flex-direction:column;align-items:center;padding-top:9%;gap:10px;">
+        <img src="assets/sello.webp" alt="" style="width:25%;height:auto;filter:drop-shadow(0 4px 5px rgba(60,50,30,.3));"></img>
+        <div style="font-size:clamp(9px,2.4vw,11px);letter-spacing:.42em;padding-left:.42em;color:#5E5340;">SAVE THE DATE</div>
+        <div style="width:34px;height:1px;background:#B89A5A;"></div>
       </div>
-      <div style="position:absolute;inset:0;filter:drop-shadow(0 -2px 3px rgba(30,36,10,.25));">
-        <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(0 0,52% 56%,0 100%);"></div>
-        <div style="position:absolute;inset:0;background:#6B7A3A;clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
-        <div style="position:absolute;inset:0;background:#63722F;clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
+      <div style="position:absolute;inset:0;filter:drop-shadow(0 -2px 4px rgba(50,42,28,.22));">
+        <div style="position:absolute;inset:0;background:linear-gradient(100deg,#C2E0EE,#B4D9E9);clip-path:polygon(0 0,52% 56%,0 100%);"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(260deg,#C2E0EE,#B4D9E9);clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,#A9D2E5,#97C6DC);clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
       </div>
     </div>
   </header>
 
-  <section data-screen-label="02 Portada" style="position:relative;background:#F5ECD0;padding:8px 24px 80px;text-align:center;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
+  <section data-screen-label="02 Portada" style="position:relative;background:#F4DDB8;padding:8px 24px 120px;text-align:center;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F4DDB8"></path></svg>
     <div style="max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;">
-      <h1 data-hero="1" style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,9vw,46px);letter-spacing:.22em;color:#6B7A3A;display:flex;align-items:baseline;justify-content:center;gap:.28em;white-space:nowrap;"><span>SAVE</span><span style="font-family:'Allura',cursive;font-weight:400;font-size:.9em;letter-spacing:0;color:#55622A;">the</span><span>DATE</span></h1>
-      <div data-hero-write="1" style="font-family:'Allura',cursive;font-size:clamp(50px,14vw,70px);line-height:1.1;color:#3F4B22;padding:0 .1em;">{{ c.coupleNames }}</div>
-      <img data-hero="2" src="assets/monograma-verde.webp" alt="Monograma R&amp;M" style="width:100px;height:auto;"></img>
+      <h1 data-hero="1" style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,9vw,46px);letter-spacing:.22em;color:#786B50;display:flex;align-items:baseline;justify-content:center;gap:.28em;white-space:nowrap;"><span>SAVE</span><span style="font-family:'Allura',cursive;font-weight:400;font-size:.9em;letter-spacing:0;color:#786B50;">the</span><span>DATE</span></h1>
+      <div data-hero-write="1" style="font-family:'Allura',cursive;font-size:clamp(50px,14vw,70px);line-height:1.1;color:#5E5340;padding:0 .1em;">{{ c.coupleNames }}</div>
+      <img data-hero="2" src="assets/sello.webp" alt="Sello R&amp;M" style="width:130px;height:auto;filter:drop-shadow(0 6px 8px rgba(50,42,28,.3));"></img>
       <div data-hero="3" style="display:flex;flex-direction:column;gap:12px;">
-        <div style="font-weight:500;font-size:16px;letter-spacing:.34em;padding-left:.34em;color:#3F4B22;">{{ c.dateDisplay }}</div>
-        <div style="font-weight:500;font-size:12px;letter-spacing:.3em;padding-left:.3em;color:#55622A;text-wrap:balance;">{{ c.locationDisplay }}</div>
+        <div style="font-weight:500;font-size:16px;letter-spacing:.34em;padding-left:.34em;color:#5E5340;">{{ c.dateDisplay }}</div>
+        <div style="font-weight:500;font-size:12px;letter-spacing:.3em;padding-left:.3em;color:#786B50;text-wrap:balance;">{{ c.locationDisplay }}</div>
       </div>
       <div style="position:relative;width:100%;max-width:440px;margin-top:28px;">
-        <div style="position:relative;padding:9px;border:1px solid rgba(107,122,58,.55);border-radius:999px 999px 6px 6px;">
-          <div data-hero-arch="1" style="position:relative;aspect-ratio:5/6;border-radius:999px 999px 2px 2px;overflow:hidden;background:#EDE3C4;">
+        <div style="position:relative;padding:9px;border:1px solid rgba(148,139,102,.55);border-radius:999px 999px 6px 6px;">
+          <div data-hero-arch="1" style="position:relative;aspect-ratio:5/6;border-radius:999px 999px 2px 2px;overflow:hidden;background:#EBD3A8;">
             <div data-parallax="hero" style="position:absolute;left:0;right:0;top:-10%;bottom:-10%;">
-              <img data-anim="kenburns" src="assets/playa-hero.webp" alt="Acuarela de la playa en Isla de Margarita" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:42% 60%;"></img>
+              <img data-anim="kenburns" src="assets/playa-hero.webp" alt="Acuarela de la playa en Isla de Margarita" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:50% 78%;"></img>
             </div>
           </div>
         </div>
         <img data-anim="spin" src="assets/sol.webp" alt="" style="position:absolute;left:-14px;top:12%;width:clamp(72px,20vw,100px);opacity:.95;pointer-events:none;"></img>
-        <img data-anim="sway" src="assets/palmera-verde.webp" alt="" style="position:absolute;right:-22px;bottom:-26px;width:clamp(120px,34vw,170px);transform-origin:50% 92%;pointer-events:none;"></img>
-      </div>
+        <img data-anim="sway" src="assets/palmera-marron.webp" alt="" style="position:absolute;right:6px;bottom:-104px;width:clamp(88px,24vw,104px);transform-origin:50% 92%;pointer-events:none;"></img>
+        </div>
     </div>
   </section>
 
-  <section data-screen-label="03 Cuenta regresiva" style="position:relative;background:#6B7A3A;padding:72px 20px 80px;text-align:center;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#6B7A3A"></path></svg>
-    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"><img data-anim="spin" src="assets/sol.webp" alt="" loading="lazy" style="position:absolute;left:50%;top:50%;width:380px;margin:-190px 0 0 -190px;opacity:.13;"></img></div>
+  <section data-screen-label="03 Cuenta regresiva" style="position:relative;background:#EBD3A8;padding:72px 20px 80px;text-align:center;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#EBD3A8"></path></svg>
+    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"><img data-anim="spin" src="assets/sol-verde.webp" alt="" loading="lazy" style="position:absolute;left:50%;top:50%;width:440px;margin:-220px 0 0 -220px;opacity:.2;"></img></div>
     <div data-reveal="1" style="position:relative;max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:24px;">
-      <div style="font-size:12px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#FFF9EA;">FALTAN</div>
+      <div style="font-size:12px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#5E5340;">FALTAN</div>
       <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;">
-        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.d }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">DÍAS</div></div>
-        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.h }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">HORAS</div></div>
-        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.m }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">MIN</div></div>
-        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#F5ECD0;font-variant-numeric:tabular-nums;">{{ cd.s }}</div><div style="font-size:11px;letter-spacing:.26em;color:#FFF9EA;">SEG</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#5E5340;font-variant-numeric:tabular-nums;">{{ cd.d }}</div><div style="font-size:11px;letter-spacing:.26em;color:#5E5340;">DÍAS</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#5E5340;font-variant-numeric:tabular-nums;">{{ cd.h }}</div><div style="font-size:11px;letter-spacing:.26em;color:#5E5340;">HORAS</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#5E5340;font-variant-numeric:tabular-nums;">{{ cd.m }}</div><div style="font-size:11px;letter-spacing:.26em;color:#5E5340;">MIN</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#5E5340;font-variant-numeric:tabular-nums;">{{ cd.s }}</div><div style="font-size:11px;letter-spacing:.26em;color:#5E5340;">SEG</div></div>
       </div>
-      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#F5ECD0;">{{ c.countdownCaption }}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#5E5340;">{{ c.countdownCaption }}</div>
     </div>
   </section>
 
-  <section data-screen-label="04 Itinerario" style="position:relative;background:#F5ECD0;padding:64px 24px 80px;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
+  <section data-screen-label="04 Itinerario" style="position:relative;background:#F4DDB8;padding:64px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#F4DDB8"></path></svg>
     <div style="max-width:520px;margin:0 auto;">
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:40px;">
-        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">ITINERARIO</div>
-        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,8vw,36px);letter-spacing:.16em;padding-left:.16em;color:#6B7A3A;">CELEBREMOS JUNTOS</h2>
-        <div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:1px;background:#A9B380;"></div><img src="assets/concha.webp" alt="" style="width:26px;"></img><div style="width:48px;height:1px;background:#A9B380;"></div></div>
+        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#786B50;">ITINERARIO</div>
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,8vw,36px);letter-spacing:.16em;padding-left:.16em;color:#786B50;">CELEBREMOS JUNTOS</h2>
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:1px;background:#B5AC88;"></div><img src="assets/concha.webp" alt="" style="width:26px;"></img><div style="width:48px;height:1px;background:#B5AC88;"></div></div>
       </div>
       <div style="position:relative;display:flex;flex-direction:column;gap:26px;">
-        <div style="position:absolute;left:27px;top:28px;bottom:28px;width:1px;background:#6B7A3A;"></div>
+        <div style="position:absolute;left:27px;top:28px;bottom:28px;width:1px;background:#786B50;"></div>
         <sc-for list="{{ c.events }}" as="ev" hint-placeholder-count="3">
           <div data-reveal="1" style="position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:start;">
-            <div style="position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#F5ECD0;border:1px solid #6B7A3A;box-shadow:0 0 0 5px #F5ECD0;display:flex;align-items:center;justify-content:center;"><img src="{{ ev.iconSrc }}" alt="" style="width:34px;height:34px;object-fit:contain;"></img></div>
-            <div style="background:#FBF7EA;border:1px solid rgba(107,122,58,.45);border-radius:4px;box-shadow:0 14px 30px -22px rgba(40,50,15,.45);padding:20px 20px 22px;display:flex;flex-direction:column;gap:6px;">
-              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#55622A;">{{ ev.date }}</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;line-height:1.1;color:#3F4B22;">{{ ev.title }}</div>
-              <div style="font-size:14px;font-weight:500;letter-spacing:.14em;color:#55622A;">{{ ev.time }}</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.35;color:#3F4B22;text-wrap:pretty;">{{ ev.place }}</div>
+            <div style="position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#F4DDB8;border:1px solid #786B50;box-shadow:0 0 0 5px #F4DDB8;display:flex;align-items:center;justify-content:center;"><img src="{{ ev.iconSrc }}" alt="" style="width:34px;height:34px;object-fit:contain;"></img></div>
+            <div style="background:#FBF1DC;border:1px solid rgba(148,139,102,.45);border-radius:4px;box-shadow:0 14px 30px -22px rgba(60,50,30,.45);padding:20px 20px 22px;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#786B50;">{{ ev.date }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;line-height:1.1;color:#5E5340;">{{ ev.title }}</div>
+              <div style="font-size:14px;font-weight:500;letter-spacing:.14em;color:#786B50;">{{ ev.time }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.35;color:#5E5340;text-wrap:pretty;">{{ ev.place }}</div>
               <sc-if value="{{ ev.hasLink }}" hint-placeholder-val="{{ false }}">
-                <a href="{{ ev.link }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:10px;display:flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;background:#6B7A3A;color:#FBF7EA;font-size:11px;font-weight:500;letter-spacing:.26em;" style-hover="background:#3F4B22;color:#FBF7EA;">CÓMO LLEGAR</a>
+                <a href="{{ ev.link }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:10px;display:flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;background:#B4D9E9;color:#4A4130;font-size:11px;font-weight:500;letter-spacing:.26em;" style-hover="background:#9CCBE0;color:#4A4130;">CÓMO LLEGAR</a>
               </sc-if>
             </div>
           </div>
@@ -145,66 +149,70 @@ img{display:block;max-width:100%}
     </div>
   </section>
 
-  <section data-screen-label="05 Dresscode" style="position:relative;background:#6B7A3A;padding:72px 24px 88px;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#6B7A3A"></path></svg>
-    <div data-reveal="1" style="position:relative;max-width:340px;margin:0 auto;border:1px solid rgba(245,236,208,.55);border-radius:999px 999px 6px 6px;padding:64px 28px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;">
-      <img src="assets/palmera-crema.webp" alt="" loading="lazy" style="width:64px;transform:rotate(-6deg);"></img>
-      <div style="font-size:13px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#FFF9EA;">DRESSCODE</div>
-      <div style="width:36px;height:1px;background:#D99A00;"></div>
-      <div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,10vw,42px);line-height:1.1;color:#FFF9EA;">{{ c.dresscode }}</div>
+  <section data-screen-label="05 Dresscode" style="position:relative;background:#EBD3A8;padding:72px 24px 88px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#EBD3A8"></path></svg>
+    <div data-reveal="1" style="position:relative;max-width:340px;margin:0 auto;border:1px solid rgba(120,107,80,.55);outline:1px solid rgba(120,107,80,.28);outline-offset:-9px;border-radius:999px 999px 6px 6px;padding:64px 28px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <img src="assets/palmera-verde.webp" alt="" loading="lazy" style="width:64px;transform:rotate(-6deg);"></img>
+      <div style="font-size:13px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#5E5340;">DRESSCODE</div>
+      <div style="width:36px;height:1px;background:#948B66;"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,10vw,42px);line-height:1.1;color:#5E5340;">{{ c.dresscode }}</div>
       <sc-if value="{{ hasWhiteNote }}" hint-placeholder-val="{{ true }}">
-        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.35;color:#FFF9EA;">{{ c.whitePartyNote }}</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.35;color:#5E5340;">{{ c.whitePartyNote }}</div>
       </sc-if>
     </div>
   </section>
 
-  <section data-screen-label="06 Hoteles" style="position:relative;background:#F5ECD0;padding:64px 24px 80px;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#F5ECD0"></path></svg>
+  <section data-screen-label="06 Hoteles" style="position:relative;background:#F4DDB8;padding:64px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#F4DDB8"></path></svg>
     <div style="position:relative;max-width:520px;margin:0 auto;">
       <div data-reveal="1" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:30px;">
         <img src="assets/palmera-verde.webp" alt="" loading="lazy" style="width:54px;transform:rotate(5deg);"></img>
-        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">DÓNDE HOSPEDARSE</div>
-        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#6B7A3A;text-wrap:balance;">HOTELES RECOMENDADOS</h2>
+        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#786B50;">DÓNDE HOSPEDARSE</div>
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#786B50;text-wrap:balance;">HOTELES RECOMENDADOS</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px;">
         <sc-for list="{{ hotels }}" as="h" hint-placeholder-count="4">
-          <div data-reveal="1" style="background:#FBF7EA;border:1px solid rgba(107,122,58,.45);border-radius:4px;box-shadow:0 16px 32px -24px rgba(40,50,15,.5);overflow:hidden;">
+          <div data-reveal="1" style="background:#FBF1DC;border:1px solid rgba(148,139,102,.45);border-radius:4px;box-shadow:0 16px 32px -24px rgba(60,50,30,.5);overflow:hidden;">
+            <sc-if value="{{ h.hasPhoto }}" hint-placeholder-val="{{ false }}"><div class="snap" style="display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#EBD3A8;"><sc-for list="{{ h.fotos }}" as="ph" hint-placeholder-count="3"><sc-if value="{{ ph.isImg }}" hint-placeholder-val="{{ true }}"><img src="{{ ph.src }}" alt="{{ h.name }}" loading="lazy" draggable="false" style="flex:0 0 {{ ph.w }};width:{{ ph.w }};aspect-ratio:{{ ph.ar }};object-fit:cover;scroll-snap-align:center;"></img></sc-if><sc-if value="{{ ph.isVideo }}" hint-placeholder-val="{{ false }}"><video src="{{ ph.src }}" poster="{{ ph.poster }}" autoplay muted loop playsinline preload="metadata" style="flex:0 0 {{ ph.w }};width:{{ ph.w }};aspect-ratio:{{ ph.ar }};object-fit:cover;scroll-snap-align:center;background:#EBD3A8;"></video></sc-if><sc-if value="{{ ph.isLink }}" hint-placeholder-val="{{ false }}"><a href="{{ ph.link }}" target="_blank" rel="noopener" aria-label="Ver video de {{ h.name }} en Instagram" style="position:relative;display:block;flex:0 0 {{ ph.w }};width:{{ ph.w }};aspect-ratio:{{ ph.ar }};scroll-snap-align:center;"><img src="{{ ph.src }}" alt="{{ h.name }}" loading="lazy" draggable="false" style="width:100%;height:100%;object-fit:cover;"></img><div style="position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(251,241,220,.88);box-shadow:0 8px 20px -6px rgba(50,42,28,.5);display:flex;align-items:center;justify-content:center;"><div style="margin-left:5px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #786B50;"></div></div></a></sc-if></sc-for></div><sc-if value="{{ h.manyPhotos }}" hint-placeholder-val="{{ false }}"><div style="text-align:center;padding:8px 0 0;font-size:9.5px;letter-spacing:.3em;color:#786B50;">DESLIZA ›</div></sc-if></sc-if>
+            <sc-if value="{{ h.hasPost }}" hint-placeholder-val="{{ false }}"><div style="padding:0 14px 14px;"><iframe src="{{ h.postSrc }}" title="Publicación de {{ h.name }}" loading="lazy" scrolling="no" allowtransparency="true" style="display:block;width:100%;height:560px;border:1px solid rgba(148,139,102,.35);border-radius:4px;background:#fff;"></iframe></div></sc-if>
             <div style="padding:20px 20px 18px;display:flex;flex-direction:column;gap:6px;">
-              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#3F4B22;">{{ h.name }}</div>
-              <div style="font-size:13.5px;line-height:1.5;color:#55622A;text-wrap:pretty;">{{ h.zona }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#5E5340;">{{ h.name }}</div>
+              <div style="font-size:13.5px;line-height:1.5;color:#786B50;text-wrap:pretty;">{{ h.zona }}</div>
             </div>
-            <div style="display:flex;gap:1px;background:rgba(107,122,58,.4);border-top:1px solid rgba(107,122,58,.4);">
-              <sc-if value="{{ h.hasIg }}" hint-placeholder-val="{{ true }}"><a href="{{ h.instagramUrl }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF7EA;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">INSTAGRAM</a></sc-if>
-              <sc-if value="{{ h.hasPhone }}" hint-placeholder-val="{{ false }}"><a href="{{ h.contactLink }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF7EA;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">{{ h.ctaLabel }}</a></sc-if>
-              <a href="{{ h.mapsLink }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF7EA;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">UBICACIÓN</a>
+            <div style="display:flex;gap:1px;background:rgba(148,139,102,.4);border-top:1px solid rgba(148,139,102,.4);">
+              <sc-if value="{{ h.hasIg }}" hint-placeholder-val="{{ true }}"><a href="{{ h.instagramUrl }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF1DC;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#5E5340;" style-hover="background:#786B50;color:#FBF1DC;">INSTAGRAM</a></sc-if>
+              <sc-if value="{{ h.hasPhone }}" hint-placeholder-val="{{ false }}"><a href="{{ h.contactLink }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF1DC;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#5E5340;" style-hover="background:#786B50;color:#FBF1DC;">{{ h.ctaLabel }}</a></sc-if>
+              <a href="{{ h.mapsLink }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#FBF1DC;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#5E5340;" style-hover="background:#786B50;color:#FBF1DC;">UBICACIÓN</a>
             </div>
           </div>
         </sc-for>
       </div>
-      <div data-reveal="1" style="margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#3F4B22;text-align:center;"><div style="flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#D99A00;"></div>{{ c.hotelsNote }}</div>
+      <div data-reveal="1" style="margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#5E5340;text-align:center;"><div style="flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#B89A5A;"></div>{{ c.hotelsNote }}</div>
     </div>
   </section>
 
-  <section data-screen-label="07 Restaurantes" style="position:relative;background:#6B7A3A;padding:72px 24px 80px;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#6B7A3A"></path></svg>
+  <section data-screen-label="07 Restaurantes" style="position:relative;background:#EBD3A8;padding:72px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#EBD3A8"></path></svg>
     
     <div style="position:relative;max-width:520px;margin:0 auto;">
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:30px;">
         <img src="assets/concha.webp" alt="" loading="lazy" style="width:46px;transform:rotate(-6deg);"></img>
-        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#FFF9EA;">DÓNDE COMER</div>
-        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#F5ECD0;text-wrap:balance;">RESTAURANTES RECOMENDADOS</h2>
+        <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#5E5340;">DÓNDE COMER</div>
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#5E5340;text-wrap:balance;">RESTAURANTES RECOMENDADOS</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px;">
         <sc-for list="{{ restaurants }}" as="r" hint-placeholder-count="4">
-          <div data-reveal="1" style="background:#F5ECD0;border-radius:4px;outline:1px solid rgba(107,122,58,.45);outline-offset:-6px;box-shadow:0 18px 34px -22px rgba(0,0,0,.6);overflow:hidden;">
+          <div data-reveal="1" style="background:#FBF1DC;border-radius:4px;outline:1px solid rgba(148,139,102,.45);outline-offset:-6px;box-shadow:0 18px 34px -22px rgba(0,0,0,.6);overflow:hidden;">
+            <sc-if value="{{ r.hasPhoto }}" hint-placeholder-val="{{ false }}"><div class="snap" style="display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#EBD3A8;"><sc-for list="{{ r.fotos }}" as="ph" hint-placeholder-count="3"><sc-if value="{{ ph.isImg }}" hint-placeholder-val="{{ true }}"><img src="{{ ph.src }}" alt="{{ r.name }}" loading="lazy" draggable="false" style="flex:0 0 {{ ph.w }};width:{{ ph.w }};aspect-ratio:{{ ph.ar }};object-fit:cover;scroll-snap-align:center;"></img></sc-if><sc-if value="{{ ph.isVideo }}" hint-placeholder-val="{{ false }}"><video src="{{ ph.src }}" poster="{{ ph.poster }}" autoplay muted loop playsinline preload="metadata" style="flex:0 0 {{ ph.w }};width:{{ ph.w }};aspect-ratio:{{ ph.ar }};object-fit:cover;scroll-snap-align:center;background:#EBD3A8;"></video></sc-if><sc-if value="{{ ph.isLink }}" hint-placeholder-val="{{ false }}"><a href="{{ ph.link }}" target="_blank" rel="noopener" aria-label="Ver video de {{ r.name }} en Instagram" style="position:relative;display:block;flex:0 0 {{ ph.w }};width:{{ ph.w }};aspect-ratio:{{ ph.ar }};scroll-snap-align:center;"><img src="{{ ph.src }}" alt="{{ r.name }}" loading="lazy" draggable="false" style="width:100%;height:100%;object-fit:cover;"></img><div style="position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(251,241,220,.88);box-shadow:0 8px 20px -6px rgba(50,42,28,.5);display:flex;align-items:center;justify-content:center;"><div style="margin-left:5px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #786B50;"></div></div></a></sc-if></sc-for></div><sc-if value="{{ r.manyPhotos }}" hint-placeholder-val="{{ false }}"><div style="text-align:center;padding:8px 0 0;font-size:9.5px;letter-spacing:.3em;color:#786B50;">DESLIZA ›</div></sc-if></sc-if>
+            <sc-if value="{{ r.hasPost }}" hint-placeholder-val="{{ false }}"><div style="padding:0 14px 14px;"><iframe src="{{ r.postSrc }}" title="Publicación de {{ r.name }}" loading="lazy" scrolling="no" allowtransparency="true" style="display:block;width:100%;height:560px;border:1px solid rgba(148,139,102,.35);border-radius:4px;background:#fff;"></iframe></div></sc-if>
             <div style="padding:22px 22px 18px;display:flex;flex-direction:column;gap:6px;">
-              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#3F4B22;">{{ r.name }}</div>
-              <div style="font-size:13.5px;line-height:1.5;color:#55622A;text-wrap:pretty;">{{ r.zona }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#5E5340;">{{ r.name }}</div>
+              <div style="font-size:13.5px;line-height:1.5;color:#786B50;text-wrap:pretty;">{{ r.zona }}</div>
             </div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 22px 22px;">
-              <sc-if value="{{ r.hasIg }}" hint-placeholder-val="{{ true }}"><a href="{{ r.instagramUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #6B7A3A;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">INSTAGRAM</a></sc-if>
-              <sc-if value="{{ r.hasPhone }}" hint-placeholder-val="{{ false }}"><a href="{{ r.contactLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #6B7A3A;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">{{ r.ctaLabel }}</a></sc-if>
-              <a href="{{ r.mapsLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #6B7A3A;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#3F4B22;" style-hover="background:#6B7A3A;color:#FBF7EA;">UBICACIÓN</a>
+              <sc-if value="{{ r.hasIg }}" hint-placeholder-val="{{ true }}"><a href="{{ r.instagramUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #EBD3A8;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#5E5340;" style-hover="background:#EBD3A8;color:#FBF1DC;">INSTAGRAM</a></sc-if>
+              <sc-if value="{{ r.hasPhone }}" hint-placeholder-val="{{ false }}"><a href="{{ r.contactLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #EBD3A8;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#5E5340;" style-hover="background:#EBD3A8;color:#FBF1DC;">{{ r.ctaLabel }}</a></sc-if>
+              <a href="{{ r.mapsLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #EBD3A8;border-radius:999px;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#5E5340;" style-hover="background:#EBD3A8;color:#FBF1DC;">UBICACIÓN</a>
             </div>
           </div>
         </sc-for>
@@ -212,124 +220,124 @@ img{display:block;max-width:100%}
     </div>
   </section>
 
-  <section data-screen-label="08 RSVP" style="position:relative;background:#F5ECD0;padding:88px 24px 80px;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
-    <div data-reveal="1" style="position:relative;max-width:400px;margin:0 auto;background:#FBF7EA;border:1px solid rgba(107,122,58,.55);outline:1px solid rgba(107,122,58,.25);outline-offset:-9px;border-radius:999px 999px 6px 6px;box-shadow:0 18px 38px -22px rgba(40,50,15,.45);padding:96px 26px 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
-      <img src="assets/sello.webp" alt="" loading="lazy" style="position:absolute;top:-30px;left:50%;width:84px;margin-left:-42px;transform:rotate(-6deg);filter:drop-shadow(0 5px 7px rgba(30,30,0,.3));"></img>
-      <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">RSVP</div>
-      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,32px);line-height:1.2;letter-spacing:.08em;color:#6B7A3A;text-wrap:balance;">{{ c.rsvpTitle }}</h2>
-      <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.45;color:#3F4B22;text-wrap:pretty;">{{ c.rsvpText }}</p>
-      <button type="button" onClick="{{ openForm }}" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;margin-top:14px;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;min-height:58px;border-radius:999px;background:#6B7A3A;color:#FBF7EA;font-size:12px;font-weight:500;letter-spacing:.26em;padding-left:.26em;box-shadow:0 10px 22px -10px rgba(63,75,34,.7);" style-hover="background:#3F4B22;color:#FBF7EA;">CONFIRMAR ASISTENCIA</button>
+  <section data-screen-label="08 RSVP" style="position:relative;background:#F4DDB8;padding:88px 24px 80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F4DDB8"></path></svg>
+    <div data-reveal="1" style="position:relative;max-width:400px;margin:0 auto;background:#FBF1DC;border:1px solid rgba(148,139,102,.55);outline:1px solid rgba(148,139,102,.25);outline-offset:-9px;border-radius:999px 999px 6px 6px;box-shadow:0 18px 38px -22px rgba(60,50,30,.45);padding:96px 26px 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <img src="assets/sello.webp" alt="" loading="lazy" style="position:absolute;top:-30px;left:50%;width:84px;margin-left:-42px;transform:rotate(-6deg);filter:drop-shadow(0 5px 7px rgba(60,50,30,.3));"></img>
+      <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#786B50;">RSVP</div>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,32px);line-height:1.2;letter-spacing:.08em;color:#786B50;text-wrap:balance;">{{ c.rsvpTitle }}</h2>
+      <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.45;color:#5E5340;text-wrap:pretty;">{{ c.rsvpText }}</p>
+      <button type="button" onClick="{{ openForm }}" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;margin-top:14px;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;min-height:58px;border-radius:999px;background:#B4D9E9;color:#4A4130;font-size:12px;font-weight:500;letter-spacing:.26em;padding-left:.26em;box-shadow:0 10px 22px -10px rgba(90,150,180,.7);" style-hover="background:#9CCBE0;color:#4A4130;">CONFIRMAR ASISTENCIA</button>
     </div>
   </section>
 
-  <section data-screen-label="09 Regalos" style="position:relative;background:#6B7A3A;padding:72px 24px 88px;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#6B7A3A"></path></svg>
+  <section data-screen-label="09 Regalos" style="position:relative;background:#EBD3A8;padding:72px 24px 88px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#EBD3A8"></path></svg>
     <div style="max-width:520px;margin:0 auto;">
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:28px;">
-        <img src="assets/sol-crema.webp" alt="" loading="lazy" style="width:56px;transform:rotate(6deg);"></img>
-        <div style="font-size:13px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#FFF9EA;">REGALOS</div>
-        <div style="width:36px;height:1px;background:#D99A00;"></div>
-        <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5;color:#FFF9EA;text-wrap:pretty;">{{ c.giftsText }}</p>
+        <img src="assets/sol-verde.webp" alt="" loading="lazy" style="width:56px;transform:rotate(6deg);"></img>
+        <div style="font-size:13px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#5E5340;">REGALOS</div>
+        <div style="width:36px;height:1px;background:#948B66;"></div>
+        <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5;color:#5E5340;text-wrap:pretty;">{{ c.giftsText }}</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:14px;">
         <sc-for list="{{ zelle }}" as="z" hint-placeholder-count="2">
-          <div data-reveal="1" style="background:#F5ECD0;border-radius:4px;box-shadow:0 16px 30px -22px rgba(0,0,0,.55);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+          <div data-reveal="1" style="background:#FBF1DC;border-radius:4px;box-shadow:0 16px 30px -22px rgba(0,0,0,.55);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
             <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
-              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#55622A;">{{ z.label }}</div>
-              <div style="font-size:15.5px;color:#3F4B22;overflow-wrap:anywhere;">{{ z.value }}</div>
+              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#786B50;">{{ z.label }}</div>
+              <div style="font-size:15.5px;color:#5E5340;overflow-wrap:anywhere;">{{ z.value }}</div>
             </div>
-            <button type="button" onClick="{{ z.onCopy }}" style="flex-shrink:0;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #3F4B22;background:{{ z.bg }};color:{{ z.fg }};font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.2em;cursor:pointer;transition:background 200ms,color 200ms;">{{ z.cta }}</button>
+            <button type="button" onClick="{{ z.onCopy }}" style="flex-shrink:0;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #5E5340;background:{{ z.bg }};color:{{ z.fg }};font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.2em;cursor:pointer;transition:background 200ms,color 200ms;">{{ z.cta }}</button>
           </div>
         </sc-for>
       </div>
     </div>
   </section>
 
-  <section data-screen-label="10 Cierre" style="position:relative;background:#F5ECD0;padding:96px 24px 104px;text-align:center;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#F5ECD0"></path></svg>
+  <section data-screen-label="10 Cierre" style="position:relative;background:#F4DDB8;padding:96px 24px 104px;text-align:center;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#F4DDB8"></path></svg>
     <div style="position:absolute;inset:0;background-image:url(assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
     <div data-reveal="1" style="position:relative;max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px;">
-      <div style="font-family:'Allura',cursive;font-size:clamp(56px,16vw,80px);line-height:1;color:#55622A;">{{ c.closing }}</div>
-      <img src="assets/monograma-verde.webp" alt="Monograma R&amp;M" loading="lazy" style="width:116px;height:auto;"></img>
-      <div style="font-weight:500;font-size:13px;letter-spacing:.36em;padding-left:.36em;color:#55622A;">{{ c.dateDisplay }}</div>
+      <div style="font-family:'Allura',cursive;font-size:clamp(56px,16vw,80px);line-height:1;color:#786B50;">{{ c.closing }}</div>
+      <img src="assets/sello.webp" alt="Sello R&amp;M" loading="lazy" style="width:140px;height:auto;filter:drop-shadow(0 6px 8px rgba(50,42,28,.3));"></img>
+      <div style="font-weight:500;font-size:13px;letter-spacing:.36em;padding-left:.36em;color:#786B50;">{{ c.dateDisplay }}</div>
     </div>
   </section>
 </main>
 
 <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ false }}">
-<div data-screen-label="08b Formulario RSVP" onClick="{{ closeForm }}" style="position:fixed;inset:0;z-index:150;background:rgba(40,48,18,.6);display:flex;align-items:flex-end;justify-content:center;padding:12px 0 0;">
-  <div role="dialog" aria-modal="true" aria-label="Confirmar asistencia" onClick="{{ stop }}" style="position:relative;width:100%;max-width:480px;max-height:94vh;overflow-y:auto;background:#FBF7EA;border-radius:18px 18px 0 0;box-shadow:0 -10px 40px rgba(30,36,10,.35);padding:34px 22px 28px;">
-    <button type="button" onClick="{{ closeForm }}" aria-label="Cerrar" style="position:absolute;top:10px;right:10px;width:44px;height:44px;border:none;background:transparent;color:#3F4B22;font-size:28px;line-height:1;cursor:pointer;font-family:'Cormorant Garamond',serif;">×</button>
+<div data-screen-label="08b Formulario RSVP" onClick="{{ closeForm }}" style="position:fixed;inset:0;z-index:150;background:rgba(50,42,28,.6);display:flex;align-items:flex-end;justify-content:center;padding:12px 0 0;">
+  <div role="dialog" aria-modal="true" aria-label="Confirmar asistencia" onClick="{{ stop }}" style="position:relative;width:100%;max-width:480px;max-height:94vh;overflow-y:auto;background:#FBF1DC;border-radius:18px 18px 0 0;box-shadow:0 -10px 40px rgba(50,42,28,.35);padding:34px 22px 28px;">
+    <button type="button" onClick="{{ closeForm }}" aria-label="Cerrar" style="position:absolute;top:10px;right:10px;width:44px;height:44px;border:none;background:transparent;color:#5E5340;font-size:28px;line-height:1;cursor:pointer;font-family:'Cormorant Garamond',serif;">×</button>
     <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:30px 0 20px;">
-        <img src="assets/sello.webp" alt="" style="width:90px;filter:drop-shadow(0 4px 6px rgba(30,30,0,.25));"></img>
-        <div style="font-family:'Allura',cursive;font-size:54px;line-height:1;color:#55622A;">¡Gracias!</div>
-        <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.45;color:#3F4B22;text-wrap:pretty;">{{ sentMsg }}</p>
-        <button type="button" onClick="{{ closeForm }}" style="margin-top:8px;min-height:48px;padding:0 28px;border-radius:999px;border:1px solid #6B7A3A;background:transparent;color:#3F4B22;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.24em;cursor:pointer;">VOLVER A LA INVITACIÓN</button>
+        <img src="assets/sello.webp" alt="" style="width:90px;filter:drop-shadow(0 4px 6px rgba(60,50,30,.25));"></img>
+        <div style="font-family:'Allura',cursive;font-size:54px;line-height:1;color:#786B50;">¡Gracias!</div>
+        <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.45;color:#5E5340;text-wrap:pretty;">{{ sentMsg }}</p>
+        <button type="button" onClick="{{ closeForm }}" style="margin-top:8px;min-height:48px;padding:0 28px;border-radius:999px;border:1px solid #786B50;background:transparent;color:#5E5340;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.24em;cursor:pointer;">VOLVER A LA INVITACIÓN</button>
       </div>
     </sc-if>
     <sc-if value="{{ formEditing }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;flex-direction:column;gap:20px;">
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
-          <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#55622A;">RSVP</div>
-          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.15;color:#6B7A3A;">Confirma tu asistencia</h2>
-          <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#3F4B22;">Completa tus datos y guardaremos tu lugar en la celebración.</p>
+          <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#786B50;">RSVP</div>
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.15;color:#786B50;">Confirma tu asistencia</h2>
+          <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#5E5340;">Completa tus datos y guardaremos tu lugar en la celebración.</p>
         </div>
         <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">NOMBRE *<input type="text" autocomplete="given-name" value="{{ f.nombre }}" onChange="{{ on.nombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">APELLIDO *<input type="text" autocomplete="family-name" value="{{ f.apellido }}" onChange="{{ on.apellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">NOMBRE *<input type="text" autocomplete="given-name" value="{{ f.nombre }}" onChange="{{ on.nombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#786B50;"></input></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">APELLIDO *<input type="text" autocomplete="family-name" value="{{ f.apellido }}" onChange="{{ on.apellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#786B50;"></input></label>
         </div>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">TELÉFONO *<input type="tel" autocomplete="tel" placeholder="+58 412 000 0000" value="{{ f.telefono }}" onChange="{{ on.telefono }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">TELÉFONO *<input type="tel" autocomplete="tel" placeholder="+58 412 000 0000" value="{{ f.telefono }}" onChange="{{ on.telefono }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#786B50;"></input></label>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">¿NOS ACOMPAÑAS? *</div>
+          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">¿NOS ACOMPAÑAS? *</div>
           <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
-            <button type="button" onClick="{{ attendYes }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #6B7A3A;background:{{ yesBg }};color:{{ yesFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">¡Sí, ahí estaré!</button>
-            <button type="button" onClick="{{ attendNo }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #6B7A3A;background:{{ noBg }};color:{{ noFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">No podré asistir</button>
+            <button type="button" onClick="{{ attendYes }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #786B50;background:{{ yesBg }};color:{{ yesFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">¡Sí, ahí estaré!</button>
+            <button type="button" onClick="{{ attendNo }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #786B50;background:{{ noBg }};color:{{ noFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">No podré asistir</button>
           </div>
         </div>
         <sc-if value="{{ isAttending }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px;border:1px dashed rgba(107,122,58,.6);border-radius:10px;">
-          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#3F4B22;">¿Vienes acompañado?</div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px;border:1px dashed rgba(148,139,102,.6);border-radius:10px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#5E5340;">¿Vienes acompañado?</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <button type="button" onClick="{{ acompNo }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #6B7A3A;background:{{ acNoBg }};color:{{ acNoFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">Sin acompañante</button>
-            <button type="button" onClick="{{ acompSi }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #6B7A3A;background:{{ acSiBg }};color:{{ acSiFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">+1 acompañante</button>
+            <button type="button" onClick="{{ acompNo }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #786B50;background:{{ acNoBg }};color:{{ acNoFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">Sin acompañante</button>
+            <button type="button" onClick="{{ acompSi }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #786B50;background:{{ acSiBg }};color:{{ acSiFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">+1 acompañante</button>
           </div>
           <sc-if value="{{ hasAcomp }}" hint-placeholder-val="{{ false }}">
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
-              <input type="text" placeholder="Nombre" aria-label="Nombre del acompañante" value="{{ f.acompNombre }}" onChange="{{ on.acompNombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;color:#3F4B22;outline-color:#6B7A3A;"></input>
-              <input type="text" placeholder="Apellido" aria-label="Apellido del acompañante" value="{{ f.acompApellido }}" onChange="{{ on.acompApellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;color:#3F4B22;outline-color:#6B7A3A;"></input>
+              <input type="text" placeholder="Nombre" aria-label="Nombre del acompañante" value="{{ f.acompNombre }}" onChange="{{ on.acompNombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Jost',sans-serif;font-size:16px;color:#5E5340;outline-color:#786B50;"></input>
+              <input type="text" placeholder="Apellido" aria-label="Apellido del acompañante" value="{{ f.acompApellido }}" onChange="{{ on.acompApellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Jost',sans-serif;font-size:16px;color:#5E5340;outline-color:#786B50;"></input>
             </div>
           </sc-if>
         </div>
         </sc-if>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">¿DESDE DÓNDE NOS ACOMPAÑAS? <span style="font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:0;font-size:14px;">(opcional)</span></div>
+          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">¿DESDE DÓNDE NOS ACOMPAÑAS? <span style="font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:0;font-size:14px;">(opcional)</span></div>
           <div style="display:flex;flex-wrap:wrap;gap:8px;">
             <sc-for list="{{ origins }}" as="o" hint-placeholder-count="3">
-              <button type="button" onClick="{{ o.onClick }}" style="min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #6B7A3A;background:{{ o.bg }};color:{{ o.fg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">{{ o.label }}</button>
+              <button type="button" onClick="{{ o.onClick }}" style="min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #786B50;background:{{ o.bg }};color:{{ o.fg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">{{ o.label }}</button>
             </sc-for>
           </div>
         </div>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">UNAS PALABRAS PARA LOS NOVIOS<textarea rows="3" placeholder="Un deseo, un consejo, un recuerdo…" value="{{ f.palabras }}" onChange="{{ on.palabras }}" style="padding:12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:0;color:#3F4B22;resize:vertical;outline-color:#6B7A3A;"></textarea></label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">LA CANCIÓN QUE NO PUEDE FALTAR EN LA PISTA<input type="text" placeholder="Canción · Artista" value="{{ f.cancionPista }}" onChange="{{ on.cancionPista }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#3F4B22;">UNA CANCIÓN QUE TE RECUERDE A NOSOTROS<input type="text" placeholder="Canción · Artista" value="{{ f.cancionNovios }}" onChange="{{ on.cancionNovios }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(107,122,58,.5);border-radius:6px;background:#FFFDF5;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#3F4B22;outline-color:#6B7A3A;"></input></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">UNAS PALABRAS PARA LOS NOVIOS<textarea rows="3" placeholder="Un deseo, un consejo, un recuerdo…" value="{{ f.palabras }}" onChange="{{ on.palabras }}" style="padding:12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:0;color:#5E5340;resize:vertical;outline-color:#786B50;"></textarea></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">LA CANCIÓN QUE NO PUEDE FALTAR EN LA PISTA<input type="text" placeholder="Canción · Artista" value="{{ f.cancionPista }}" onChange="{{ on.cancionPista }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#786B50;"></input></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">UNA CANCIÓN QUE TE RECUERDE A NOSOTROS<input type="text" placeholder="Canción · Artista" value="{{ f.cancionNovios }}" onChange="{{ on.cancionNovios }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(148,139,102,.5);border-radius:6px;background:#FFF8EA;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#786B50;"></input></label>
         <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
           <div role="alert" style="font-size:13.5px;color:#9A3B1E;text-align:center;">{{ formError }}</div>
         </sc-if>
-        <button type="button" onClick="{{ submitForm }}" style="min-height:56px;border:none;border-radius:999px;background:#6B7A3A;color:#FBF7EA;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.26em;cursor:pointer;box-shadow:0 10px 22px -10px rgba(63,75,34,.7);" style-hover="background:#3F4B22;">ENVIAR CONFIRMACIÓN</button>
-        <div style="font-size:12.5px;line-height:1.5;color:#3F4B22;text-align:center;">Se abrirá WhatsApp con tus respuestas listas para enviar a nuestra wedding planner.</div>
+        <button type="button" onClick="{{ submitForm }}" style="min-height:56px;border:none;border-radius:999px;background:#786B50;color:#FBF1DC;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.26em;cursor:pointer;box-shadow:0 10px 22px -10px rgba(74,65,48,.7);" style-hover="background:#5E5340;">ENVIAR CONFIRMACIÓN</button>
+        <div style="font-size:12.5px;line-height:1.5;color:#5E5340;text-align:center;">Se abrirá WhatsApp con tus respuestas listas para enviar a nuestra wedding planner.</div>
       </div>
     </sc-if>
   </div>
 </div>
 </sc-if>
 
-<sc-if value="{{ hasMusic }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ toggleMusic }}" aria-label="{{ musicAria }}" aria-pressed="{{ playing }}" style="position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;width:52px;height:52px;border-radius:50%;border:1px solid rgba(245,236,208,.45);background:#6B7A3A;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:3px;box-shadow:0 10px 22px -8px rgba(30,36,12,.6);transition:opacity 600ms ease;opacity:{{ musicOpacity }};pointer-events:{{ musicPointer }};" style-hover="background:#3F4B22;">
-  <div data-eq="1" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
-  <div data-eq="2" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
-  <div data-eq="3" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
-  <div data-eq="4" style="width:3px;height:18px;border-radius:2px;background:#F5ECD0;transform-origin:50% 100%;"></div>
+<sc-if value="{{ hasMusic }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ toggleMusic }}" aria-label="{{ musicAria }}" aria-pressed="{{ playing }}" style="position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;width:52px;height:52px;border-radius:50%;border:1px solid rgba(245,236,208,.45);background:#786B50;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:3px;box-shadow:0 10px 22px -8px rgba(50,42,28,.6);transition:opacity 600ms ease;opacity:{{ musicOpacity }};pointer-events:{{ musicPointer }};" style-hover="background:#5E5340;">
+  <div data-eq="1" style="width:3px;height:18px;border-radius:2px;background:#F4DDB8;transform-origin:50% 100%;"></div>
+  <div data-eq="2" style="width:3px;height:18px;border-radius:2px;background:#F4DDB8;transform-origin:50% 100%;"></div>
+  <div data-eq="3" style="width:3px;height:18px;border-radius:2px;background:#F4DDB8;transform-origin:50% 100%;"></div>
+  <div data-eq="4" style="width:3px;height:18px;border-radius:2px;background:#F4DDB8;transform-origin:50% 100%;"></div>
 </button></sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;skipEnvelope&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
@@ -350,17 +358,17 @@ class Component extends DCLogic {
     whitePartyNote: '', // ej. 'White Party del jueves: total white' — '' lo oculta
     // instagram: usuario sin @ ('' oculta). phone: '' oculta Contacto; whatsapp:true abre WhatsApp. maps: '' = búsqueda por nombre.
     hotels: [
-      { name: 'Tibisay', zona: 'Pampatar · frente al mar', instagram: 'tibisayhotelmargarita', phone: '+58 424 8610339', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Tibisay%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
-      { name: 'Aria by LD', zona: 'Pampatar · hotel boutique solo adultos', instagram: 'ariapampatar.byld', phone: '+58 412 8283638', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Aria%20by%20LD%20Hotel%20Boutique%2C%20Pampatar' },
-      { name: 'Hotel Margarita Real', zona: 'Pampatar · Playa El Ángel', instagram: 'hotelmargaritareal', phone: '+58 424 8995183', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Hotel%20Margarita%20Real%2C%20Pampatar' },
-      { name: 'Lidotel Margarita', zona: 'Pampatar', instagram: 'lidotel.margarita', phone: '+58 424 1593832', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Lidotel%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
+      { name: 'Tibisay', post: '', fotos: [1, 2, 3, 4, 5, 6].map(n => `assets/lugares/tibisay-${n}.webp`), /* assets/lugares/tibisay.jpg */ zona: 'Pampatar · frente al mar', instagram: 'tibisayhotelmargarita', phone: '+58 424 8610339', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Tibisay%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
+      { name: 'Aria by LD', post: '', fotos: [{ img: 'assets/lugares/aria-1.webp', link: 'https://www.instagram.com/p/DeZsxy6yLwJ/', ar: '4/5' }], /* assets/lugares/aria.jpg */ zona: 'Pampatar · hotel boutique solo adultos', instagram: 'ariapampatar.byld', phone: '+58 412 8283638', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Aria%20by%20LD%20Hotel%20Boutique%2C%20Pampatar' },
+      { name: 'Hotel Margarita Real', post: '', foto: '', /* assets/lugares/margarita-real.jpg */ zona: 'Pampatar · Playa El Ángel', instagram: 'hotelmargaritareal', phone: '+58 424 8995183', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Hotel%20Margarita%20Real%2C%20Pampatar' },
+      { name: 'Lidotel Margarita', post: '', foto: '', /* assets/lugares/lidotel.jpg */ zona: 'Pampatar', instagram: 'lidotel.margarita', phone: '+58 424 1593832', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Lidotel%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
     ],
     hotelsNote: 'Te recomendamos reservar con anticipación.',
     restaurants: [
-      { name: 'Gaia Ristorante', zona: 'Porlamar · cocina italiana', instagram: 'gaiatrattoria', phone: '+58 424 8248844', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Gaia%20Ristorante%2C%20Calle%20Campos%2C%20Porlamar%2C%20Isla%20de%20Margarita' },
-      { name: 'La Forneria Margarita', zona: 'Pampatar · panadería italiana artesanal', instagram: 'laforneriamgta', phone: '+58 412 2529779', whatsapp: true, maps: '' },
-      { name: 'Maroush', zona: 'Pampatar · fusión de culturas y sabores', instagram: 'maroushrestaurante', contactUrl: 'https://linktr.ee/Maroushmgt', contactLabel: 'RESERVAR', maps: 'https://www.google.com/maps/search/?api=1&query=Maroush%20Restaurante%2C%20Playa%20El%20%C3%81ngel%2C%20Pampatar' },
-      { name: 'Francelina', zona: 'Cocina italiana', instagram: 'francelina.ve', phone: '+58 412 2595133', whatsapp: true, maps: '' },
+      { name: 'Gaia Ristorante', post: '', fotos: [1, 2, 3, 4].map(n => `assets/lugares/gaia-${n}.webp`), /* assets/lugares/gaia.jpg */ zona: 'Porlamar · cocina italiana', instagram: 'gaiatrattoria', phone: '+58 424 8248844', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Gaia%20Ristorante%2C%20Calle%20Campos%2C%20Porlamar%2C%20Isla%20de%20Margarita' },
+      { name: 'La Forneria Margarita', post: '', foto: '', /* assets/lugares/la-forneria.jpg */ zona: 'Pampatar · panadería italiana artesanal', instagram: 'laforneriamgta', phone: '+58 412 2529779', whatsapp: true, maps: '' },
+      { name: 'Maroush', post: '', foto: '', /* assets/lugares/maroush.jpg */ zona: 'Pampatar · fusión de culturas y sabores', instagram: 'maroushrestaurante', contactUrl: 'https://linktr.ee/Maroushmgt', contactLabel: 'RESERVAR', maps: 'https://www.google.com/maps/search/?api=1&query=Maroush%20Restaurante%2C%20Playa%20El%20%C3%81ngel%2C%20Pampatar' },
+      { name: 'Francelina', post: '', foto: '', /* assets/lugares/francelina.jpg */ zona: 'Cocina italiana', instagram: 'francelina.ve', phone: '+58 412 2595133', whatsapp: true, maps: '' },
     ],
     rsvpTitle: 'POR FAVOR CONFIRMA TU ASISTENCIA',
     rsvpText: '¡Nos hace muy feliz que puedas acompañarnos!',
@@ -533,14 +541,15 @@ class Component extends DCLogic {
   renderVals() {
     const C = this.CONFIG, st = this.state.stage, open = st >= 1;
     const icons = { concha: 'assets/concha-verde.webp', palmera: 'assets/palmera-verde.webp', sol: 'assets/sol-verde.webp' };
+    const postId = u => ((u || '').match(/\/(?:p|reel)\/([\w-]+)/) || [, (u || '').trim()])[1];
     const list = arr => arr.map(x => {
       const ig = (x.instagram || '').replace(/^@/, ''), tel = (x.phone || '').replace(/\D/g, '');
-      return { ...x, hasIg: !!ig, instagramUrl: `https://instagram.com/${ig}`, hasPhone: !!(x.phone || x.contactUrl), ctaLabel: x.contactLabel || 'CONTACTO',
+      return { ...x, hasPost: !!postId(x.post), postSrc: `https://www.instagram.com/${/\/reel\//.test(x.post || '') ? 'reel' : 'p'}/${postId(x.post)}/embed/`, fotos: (x.fotos || (x.foto ? [x.foto] : [])).map((e, _, a) => { const o = typeof e === 'string' ? { img: e } : e; return { src: o.video || o.img, poster: o.img || '', link: o.link || '', isVideo: !!o.video, isLink: !o.video && !!o.link, isImg: !o.video && !o.link, w: a.length > 1 ? '86%' : '100%', ar: o.ar || '4/3' }; }), hasPhoto: !!(x.fotos || x.foto), manyPhotos: (x.fotos || []).length > 1, hasIg: !!ig, instagramUrl: `https://instagram.com/${ig}`, hasPhone: !!(x.phone || x.contactUrl), ctaLabel: x.contactLabel || 'CONTACTO',
         contactLink: x.contactUrl || (x.whatsapp ? `https://wa.me/${tel}` : `tel:+${tel}`),
         mapsLink: x.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.name + ', Isla de Margarita, Venezuela')}` };
     });
     const musicVisible = st >= 2 || !!this.props.skipEnvelope;
-    const f = this.state.f, pick = (on, c) => on ? [c, '#FBF7EA'] : ['transparent', c], G = '#3F4B22';
+    const f = this.state.f, pick = (on, c) => on ? [c, '#FBF1DC'] : ['transparent', c], G = '#5E5340';
     const [yesBg, yesFg] = pick(f.asiste === 'si', G), [noBg, noFg] = pick(f.asiste === 'no', G);
     const [acNoBg, acNoFg] = pick(f.acomp === 'no', G), [acSiBg, acSiFg] = pick(f.acomp === 'si', G);
     return {
@@ -571,7 +580,7 @@ class Component extends DCLogic {
       waLink: `https://wa.me/${C.whatsappPhone.replace(/\D/g, '')}?text=${encodeURIComponent(C.whatsappMessage)}`,
       zelle: C.zelle.map((z, i) => {
         const on = this.state.copied === i;
-        return { ...z, onCopy: () => this.copy(i, z.value), cta: on ? 'COPIADO ✓' : 'COPIAR', bg: on ? '#3F4B22' : 'transparent', fg: on ? '#F5ECD0' : '#3F4B22' };
+        return { ...z, onCopy: () => this.copy(i, z.value), cta: on ? 'COPIADO ✓' : 'COPIAR', bg: on ? '#5E5340' : 'transparent', fg: on ? '#F4DDB8' : '#5E5340' };
       }),
       playing: this.state.playing, toggleMusic: this.toggleMusic,
       musicAria: this.state.playing ? 'Pausar música' : 'Reproducir música',
