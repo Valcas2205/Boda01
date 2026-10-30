@@ -36,7 +36,9 @@ img{display:block;max-width:100%}
 /* ---------- Sobre cuadrado con relieve en seco (opción 8 de /sobres) ---------- */
 .sobre{--w:min(80vw,46vh,400px);position:relative;width:var(--w);aspect-ratio:1}
 .sobre > *{position:absolute}
+.rsvp-hoja{max-height:94vh;max-height:94dvh;overscroll-behavior:contain}
 .s-fondo{inset:0;background:#7B9373;box-shadow:0 28px 42px -18px rgba(74,65,48,.5)}
+.sobre,.s-tarjeta,.s-solapa{will-change:transform}
 .s-tarjeta{left:7%;right:7%;top:4%;height:92%;overflow:hidden;background:#FAF6F2;box-shadow:0 8px 18px -10px rgba(74,65,48,.45);text-align:center}
 .s-grano{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .22 0 0 0 0 .15 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.5}
 .s-tarjeta .s-grano{opacity:.28}
@@ -45,10 +47,10 @@ img{display:block;max-width:100%}
 .s-sombra{position:absolute;inset:0;filter:drop-shadow(2px 0 3px rgba(50,42,28,.25))}
 .s-papel{position:absolute;inset:0;overflow:hidden;background:#9AAC94}
 .s-bolsillo{clip-path:polygon(0 0,100% 0,50% 50%,100% 100%,0 100%)}
-.s-solapa{inset:0;transform-origin:100% 50%;transition:transform 800ms cubic-bezier(.55,.05,.3,1) 250ms,z-index 0s linear 600ms}
-.s-solapa-fuera{position:absolute;inset:0;transition:opacity 0s linear 600ms;filter:drop-shadow(-2px 0 3px rgba(40,40,10,.28))}
+.s-solapa{inset:0;transform-origin:100% 50%;transition:transform 1100ms cubic-bezier(.45,.05,.55,.95) 250ms,z-index 0s linear 800ms}
+.s-solapa-fuera{position:absolute;inset:0;transition:opacity 0s linear 800ms;filter:drop-shadow(-2px 0 3px rgba(40,40,10,.28))}
 .s-solapa-fuera .s-papel{clip-path:polygon(100% 0,100% 100%,50% 50%)}
-.s-solapa-dentro{position:absolute;left:50%;right:0;top:0;bottom:0;transform:rotateY(180deg);transition:opacity 0s linear 600ms;background:linear-gradient(90deg,#91A58A,#A6B6A1);clip-path:polygon(0 0,0 100%,100% 50%)}
+.s-solapa-dentro{position:absolute;left:50%;right:0;top:0;bottom:0;transform:rotateY(180deg);transition:opacity 0s linear 800ms;background:linear-gradient(90deg,#91A58A,#A6B6A1);clip-path:polygon(0 0,0 100%,100% 50%)}
 .s-pliegues{position:absolute;inset:0;width:100%;height:100%}
 .s-rel{position:absolute;filter:drop-shadow(-.8px -.8px .2px rgba(255,255,255,.42)) drop-shadow(1px 1.2px .6px rgba(45,60,40,.42))}
 .s-rel i{display:block;width:100%;height:100%;background:#9AAC94;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
@@ -62,17 +64,17 @@ img{display:block;max-width:100%}
 .s-tarjeta .s-rel{left:20%;right:20%;top:8%;height:43%;filter:drop-shadow(-1px -1px .3px rgba(255,255,255,.9)) drop-shadow(1.2px 1.6px 1px rgba(70,60,40,.26))}
 .s-tarjeta .s-rel i{background:#FAF6F2}
 /* la hoja sale por el lado abierto y, ya fuera del bolsillo, queda delante del sobre */
-@keyframes s-tarjeta-sale{0%{transform:none;z-index:2}58%{transform:translateX(106%) rotate(2deg);z-index:2}59%{z-index:7}100%{transform:translateX(47%) rotate(4deg);z-index:7}}
+@keyframes s-tarjeta-sale{0%{transform:none;z-index:2;animation-timing-function:cubic-bezier(.3,.1,.25,1)}52%{transform:translateX(108%) rotate(2deg) scale(1.02);z-index:2;animation-timing-function:cubic-bezier(.45,0,.2,1)}52.1%{z-index:7}100%{transform:translateX(47%) rotate(4deg);z-index:7}}
 </style>
 </helmet>
 
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.55;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.28 0 0 0 0 0.16 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
 
 <sc-if value="{{ showEnvelope }}" hint-placeholder-val="{{ true }}">
-<div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="{{ envLabel }}" style="position:fixed;inset:0;z-index:100;overflow:hidden;touch-action:none;cursor:pointer;background:#F3ECE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 700ms ease;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
+<div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="{{ envLabel }}" style="position:fixed;inset:0;z-index:100;overflow:hidden;touch-action:none;cursor:pointer;background:#F3ECE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 1100ms cubic-bezier(.4,0,.2,1);opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
   <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
-  <div style="position:relative;font-family:'Pinyon Script',cursive;font-size:clamp(44px,12vw,60px);line-height:1.2;padding:0 .1em .2em;color:#796C51;transition:opacity 500ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
-  <div class="sobre" style="transition:transform 1500ms cubic-bezier(.45,.05,.3,1) 600ms;transform:{{ sobreT }};">
+  <div style="position:relative;font-family:'Pinyon Script',cursive;font-size:clamp(44px,12vw,60px);line-height:1.2;padding:0 .1em .2em;color:#796C51;transition:opacity 700ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
+  <div class="sobre" style="transition:transform 2200ms cubic-bezier(.4,0,.2,1) 700ms;transform:{{ sobreT }};">
     <div class="s-fondo" style="z-index:1;"></div>
     <div class="s-tarjeta" style="z-index:{{ cardZ }};transform:{{ cardT }};animation:{{ cardAnim }};">
       <div class="s-rel concha"><i></i></div>
@@ -112,10 +114,10 @@ img{display:block;max-width:100%}
       <div class="s-solapa-dentro" style="opacity:{{ flapInOp }};"></div>
     </div>
     <div data-anim="pulse" style="z-index:6;left:39%;top:39%;width:22%;aspect-ratio:1;">
-      <img src="../assets/sello.png" alt="Sello de cera R&amp;M" style="position:absolute;inset:0;width:100%;filter:drop-shadow(0 6px 8px rgba(60,50,30,.4));transition:transform 1100ms cubic-bezier(.5,0,.25,1), opacity 600ms ease 450ms;transform:{{ sealT }};opacity:{{ sealOp }};"></img>
+      <img src="../assets/sello.png" alt="Sello de cera R&amp;M" style="position:absolute;inset:0;width:100%;filter:drop-shadow(0 6px 8px rgba(60,50,30,.4));transition:transform 700ms ease-out, opacity 600ms ease-out;transform:{{ sealT }};opacity:{{ sealOp }};"></img>
     </div>
   </div>
-  <div style="position:relative;font-size:11px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#796C51;text-align:center;transition:opacity 500ms ease;opacity:{{ hintOp }};">{{ hintText }}</div>
+  <div style="position:relative;font-size:11px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#796C51;text-align:center;transition:opacity 700ms ease;opacity:{{ hintOp }};">{{ hintText }}</div>
 </div>
 </sc-if>
 
@@ -323,8 +325,8 @@ img{display:block;max-width:100%}
 
 <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ false }}">
 <div data-screen-label="08b Formulario RSVP" onClick="{{ closeForm }}" style="position:fixed;inset:0;z-index:150;background:rgba(50,42,28,.6);display:flex;align-items:flex-end;justify-content:center;padding:12px 0 0;">
-  <div role="dialog" aria-modal="true" aria-label="Confirmar asistencia" onClick="{{ stop }}" style="position:relative;width:100%;max-width:480px;max-height:94vh;overflow-y:auto;background:#F3ECE6;border-radius:18px 18px 0 0;box-shadow:0 -10px 40px rgba(50,42,28,.35);padding:34px 22px 28px;">
-    <button type="button" onClick="{{ closeForm }}" aria-label="Cerrar" style="position:absolute;top:10px;right:10px;width:44px;height:44px;border:none;background:transparent;color:#5E5340;font-size:28px;line-height:1;cursor:pointer;font-family:'Cormorant Garamond',serif;">×</button>
+  <div class="rsvp-hoja" role="dialog" aria-modal="true" aria-label="Confirmar asistencia" onClick="{{ stop }}" style="position:relative;width:100%;max-width:480px;overflow-y:auto;background:#F3ECE6;border-radius:18px 18px 0 0;box-shadow:0 -10px 40px rgba(50,42,28,.35);padding:20px 18px calc(18px + env(safe-area-inset-bottom));">
+    <button type="button" onClick="{{ closeForm }}" aria-label="Cerrar" style="position:absolute;top:4px;right:4px;width:44px;height:44px;border:none;background:transparent;color:#5E5340;font-size:28px;line-height:1;cursor:pointer;font-family:'Cormorant Garamond',serif;">×</button>
     <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:30px 0 20px;">
         <img src="../assets/sello.png" alt="" style="width:90px;filter:drop-shadow(0 4px 6px rgba(60,50,30,.25));"></img>
@@ -334,55 +336,55 @@ img{display:block;max-width:100%}
       </div>
     </sc-if>
     <sc-if value="{{ formEditing }}" hint-placeholder-val="{{ true }}">
-      <div style="display:flex;flex-direction:column;gap:20px;">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
-          <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#796C51;">RSVP</div>
-          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.15;color:#796C51;">Confirma tu asistencia</h2>
-          <p style="margin:0;font-family:'Jost',sans-serif;font-weight:300;font-size:14.5px;color:#5E5340;">Completa tus datos y guardaremos tu lugar en la celebración.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;padding:0 22px;">
+          <div style="font-size:10px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#796C51;">RSVP</div>
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:25px;line-height:1.15;color:#796C51;">Confirma tu asistencia</h2>
+          <p style="margin:0;font-family:'Jost',sans-serif;font-weight:300;font-size:13px;line-height:1.3;color:#5E5340;text-wrap:balance;">Completa tus datos y guardaremos tu lugar en la celebración.</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">NOMBRE *<input type="text" autocomplete="given-name" value="{{ f.nombre }}" onChange="{{ on.nombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">APELLIDO *<input type="text" autocomplete="family-name" value="{{ f.apellido }}" onChange="{{ on.apellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
+          <label style="display:flex;flex-direction:column;gap:4px;font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">NOMBRE *<input type="text" autocomplete="given-name" value="{{ f.nombre }}" onChange="{{ on.nombre }}" style="min-width:0;min-height:40px;padding:0 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
+          <label style="display:flex;flex-direction:column;gap:4px;font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">APELLIDO *<input type="text" autocomplete="family-name" value="{{ f.apellido }}" onChange="{{ on.apellido }}" style="min-width:0;min-height:40px;padding:0 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
         </div>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">TELÉFONO *<input type="tel" autocomplete="tel" placeholder="+58 412 000 0000" value="{{ f.telefono }}" onChange="{{ on.telefono }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">¿NOS ACOMPAÑAS? *</div>
+        <label style="display:flex;flex-direction:column;gap:4px;font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">TELÉFONO *<input type="tel" autocomplete="tel" placeholder="+58 412 000 0000" value="{{ f.telefono }}" onChange="{{ on.telefono }}" style="min-height:40px;padding:0 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <div style="font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">¿NOS ACOMPAÑAS? *</div>
           <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
-            <button type="button" onClick="{{ attendYes }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #796C51;background:{{ yesBg }};color:{{ yesFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">¡Sí, ahí estaré!</button>
-            <button type="button" onClick="{{ attendNo }}" style="min-height:48px;padding:0 10px;border-radius:999px;border:1px solid #796C51;background:{{ noBg }};color:{{ noFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">No podré asistir</button>
+            <button type="button" onClick="{{ attendYes }}" style="min-height:40px;padding:0 8px;border-radius:999px;border:1px solid #796C51;background:{{ yesBg }};color:{{ yesFg }};font-family:'Jost',sans-serif;font-size:13px;cursor:pointer;">¡Sí, ahí estaré!</button>
+            <button type="button" onClick="{{ attendNo }}" style="min-height:40px;padding:0 8px;border-radius:999px;border:1px solid #796C51;background:{{ noBg }};color:{{ noFg }};font-family:'Jost',sans-serif;font-size:13px;cursor:pointer;">No podré asistir</button>
           </div>
         </div>
         <sc-if value="{{ isAttending }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px;border:1px dashed rgba(149,140,102,.6);border-radius:10px;">
-          <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:15px;color:#5E5340;">¿Vienes acompañado?</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <button type="button" onClick="{{ acompNo }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #796C51;background:{{ acNoBg }};color:{{ acNoFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">Sin acompañante</button>
-            <button type="button" onClick="{{ acompSi }}" style="min-height:44px;padding:0 16px;white-space:nowrap;border-radius:999px;border:1px solid #796C51;background:{{ acSiBg }};color:{{ acSiFg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">+1 acompañante</button>
+        <div style="display:flex;flex-direction:column;gap:7px;padding:10px 12px;border:1px dashed rgba(149,140,102,.6);border-radius:10px;">
+          <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:13.5px;color:#5E5340;">¿Vienes acompañado?</div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;">
+            <button type="button" onClick="{{ acompNo }}" style="min-height:38px;padding:0 6px;white-space:nowrap;border-radius:999px;border:1px solid #796C51;background:{{ acNoBg }};color:{{ acNoFg }};font-family:'Jost',sans-serif;font-size:13px;cursor:pointer;">Sin acompañante</button>
+            <button type="button" onClick="{{ acompSi }}" style="min-height:38px;padding:0 6px;white-space:nowrap;border-radius:999px;border:1px solid #796C51;background:{{ acSiBg }};color:{{ acSiFg }};font-family:'Jost',sans-serif;font-size:13px;cursor:pointer;">+1 acompañante</button>
           </div>
           <sc-if value="{{ hasAcomp }}" hint-placeholder-val="{{ false }}">
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
-              <input type="text" placeholder="Nombre" aria-label="Nombre del acompañante" value="{{ f.acompNombre }}" onChange="{{ on.acompNombre }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;color:#5E5340;outline-color:#958C66;"></input>
-              <input type="text" placeholder="Apellido" aria-label="Apellido del acompañante" value="{{ f.acompApellido }}" onChange="{{ on.acompApellido }}" style="min-width:0;min-height:46px;padding:0 12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;color:#5E5340;outline-color:#958C66;"></input>
+              <input type="text" placeholder="Nombre" aria-label="Nombre del acompañante" value="{{ f.acompNombre }}" onChange="{{ on.acompNombre }}" style="min-width:0;min-height:40px;padding:0 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;color:#5E5340;outline-color:#958C66;"></input>
+              <input type="text" placeholder="Apellido" aria-label="Apellido del acompañante" value="{{ f.acompApellido }}" onChange="{{ on.acompApellido }}" style="min-width:0;min-height:40px;padding:0 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;color:#5E5340;outline-color:#958C66;"></input>
             </div>
           </sc-if>
         </div>
         </sc-if>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">¿DESDE DÓNDE NOS ACOMPAÑAS? <span style="font-family:'Jost',sans-serif;font-weight:300;letter-spacing:0;font-size:12px;">(opcional)</span></div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <div style="font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">¿DESDE DÓNDE NOS ACOMPAÑAS? <span style="font-family:'Jost',sans-serif;font-weight:300;letter-spacing:0;font-size:11px;">(opcional)</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
             <sc-for list="{{ origins }}" as="o" hint-placeholder-count="3">
-              <button type="button" onClick="{{ o.onClick }}" style="min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #796C51;background:{{ o.bg }};color:{{ o.fg }};font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">{{ o.label }}</button>
+              <button type="button" onClick="{{ o.onClick }}" style="min-height:36px;padding:0 11px;border-radius:999px;border:1px solid #796C51;background:{{ o.bg }};color:{{ o.fg }};font-family:'Jost',sans-serif;font-size:12.5px;cursor:pointer;">{{ o.label }}</button>
             </sc-for>
           </div>
         </div>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">UNAS PALABRAS PARA LOS NOVIOS<textarea rows="3" placeholder="Un deseo, un consejo, un recuerdo…" value="{{ f.palabras }}" onChange="{{ on.palabras }}" style="padding:12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:15px;letter-spacing:0;color:#5E5340;resize:vertical;outline-color:#958C66;"></textarea></label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">LA CANCIÓN QUE NO PUEDE FALTAR EN LA PISTA<input type="text" placeholder="Canción · Artista" value="{{ f.cancionPista }}" onChange="{{ on.cancionPista }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5E5340;">UNA CANCIÓN QUE TE RECUERDE A NOSOTROS<input type="text" placeholder="Canción · Artista" value="{{ f.cancionNovios }}" onChange="{{ on.cancionNovios }}" style="min-height:46px;padding:0 12px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
+        <label style="display:flex;flex-direction:column;gap:4px;font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">UNAS PALABRAS PARA LOS NOVIOS<textarea rows="2" placeholder="Un deseo, un consejo, un recuerdo…" value="{{ f.palabras }}" onChange="{{ on.palabras }}" style="padding:8px 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;resize:vertical;outline-color:#958C66;"></textarea></label>
+        <label style="display:flex;flex-direction:column;gap:4px;font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">LA CANCIÓN QUE NO PUEDE FALTAR EN LA PISTA<input type="text" placeholder="Canción · Artista" value="{{ f.cancionPista }}" onChange="{{ on.cancionPista }}" style="min-height:40px;padding:0 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
+        <label style="display:flex;flex-direction:column;gap:4px;font-size:9.5px;font-weight:500;letter-spacing:.16em;color:#5E5340;">UNA CANCIÓN QUE TE RECUERDE A NOSOTROS<input type="text" placeholder="Canción · Artista" value="{{ f.cancionNovios }}" onChange="{{ on.cancionNovios }}" style="min-height:40px;padding:0 10px;border:1px solid rgba(149,140,102,.5);border-radius:6px;background:#FAF6F2;font-family:'Jost',sans-serif;font-size:16px;letter-spacing:0;color:#5E5340;outline-color:#958C66;"></input></label>
         <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
           <div role="alert" style="font-size:13.5px;color:#9A3B1E;text-align:center;">{{ formError }}</div>
         </sc-if>
-        <button type="button" onClick="{{ submitForm }}" style="min-height:56px;border:none;border-radius:999px;background:#796C51;color:#F3ECE6;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.26em;cursor:pointer;box-shadow:0 10px 22px -10px rgba(74,65,48,.7);" style-hover="background:#5E5340;">ENVIAR CONFIRMACIÓN</button>
-        <div style="font-size:12.5px;line-height:1.5;color:#5E5340;text-align:center;">Se abrirá WhatsApp con tus respuestas listas para enviar a nuestra wedding planner.</div>
+        <button type="button" onClick="{{ submitForm }}" style="min-height:48px;margin-top:2px;flex-shrink:0;border:none;border-radius:999px;background:#796C51;color:#F3ECE6;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.26em;cursor:pointer;box-shadow:0 10px 22px -10px rgba(74,65,48,.7);" style-hover="background:#5E5340;">ENVIAR CONFIRMACIÓN</button>
+        <div style="font-size:11.5px;line-height:1.35;margin-top:-4px;color:#5E5340;text-align:center;text-wrap:balance;">Se abrirá WhatsApp con tus respuestas listas para enviar a nuestra wedding planner.</div>
       </div>
     </sc-if>
   </div>
@@ -546,13 +548,13 @@ class Component extends DCLogic {
     if (this.state.stage > 0) { if (this.ready) this.leaveEnvelope(); return; }
     this.manualPaused = false;
     this.playMusic(3000); // el toque del invitado habilita el audio
-    (this.pulse || []).forEach(a => a.cancel());
+    (this.pulse || []).forEach(a => a.pause());
     this.setState({ stage: 1 });
     this.timeouts.push(setTimeout(() => {
       this.ready = true;
       this.setState({ ready: true });
       if (this.wantsOut) this.leaveEnvelope();
-    }, this.reduced ? 60 : 2200));
+    }, this.reduced ? 60 : 3000));
   };
 
   leaveEnvelope = () => {
@@ -563,7 +565,7 @@ class Component extends DCLogic {
     this.setState({ stage: 2 });
     this.playIntro();
     this.startObserving();
-    this.timeouts.push(setTimeout(() => this.setState({ stage: 3 }), this.reduced ? 60 : 750));
+    this.timeouts.push(setTimeout(() => this.setState({ stage: 3 }), this.reduced ? 60 : 1150));
   };
 
   // Deslizar, rueda o teclado: mientras el sobre está en pantalla la página no se mueve
@@ -666,14 +668,14 @@ class Component extends DCLogic {
       flapZ: open ? 0 : 5,
       flapOutOp: open ? 0 : 1,
       flapInOp: open ? 1 : 0,
-      flapT: open ? 'perspective(1200px) rotateY(180deg)' : 'perspective(1200px) rotateY(0deg)',
-      sealT: open ? 'translateY(115%) scale(.94)' : 'none',
+      flapT: open ? 'perspective(1600px) rotateY(180deg)' : 'perspective(1600px) rotateY(0deg)',
+      sealT: open ? 'scale(1.05)' : 'none',
       sealOp: open ? 0 : 1,
       cardT: open ? 'translateX(47%) rotate(4deg)' : 'none',
       cardZ: open ? 7 : 2,
-      cardAnim: open && !this.reduced ? 's-tarjeta-sale 1500ms ease-in-out 600ms both' : 'none',
+      cardAnim: open && !this.reduced ? 's-tarjeta-sale 2200ms linear 700ms both' : 'none',
       sobreT: open ? 'translateX(calc(var(--w)*-.185)) scale(.85)' : 'none',
-      hintText: open ? 'DESLIZA PARA CONTINUAR' : 'TOCA EL SELLO PARA ABRIR',
+      hintText: this.state.ready ? 'DESLIZA PARA CONTINUAR' : 'TOCA EL SELLO PARA ABRIR',
       hintOp: !open || this.state.ready ? 1 : 0,
       envLabel: open ? 'Desliza para continuar a la invitación' : 'Toca el sello para abrir la invitación',
       textOpacity: open ? 0 : 1,
