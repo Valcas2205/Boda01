@@ -20,9 +20,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/sello.png">
-<link rel="preload" as="image" href="../assets/palmera-marron.png">
-<link rel="preload" as="image" href="../assets/sol-dorado.png">
-<link rel="preload" as="image" href="../assets/concha-marron.png">
+<link rel="preload" as="image" href="../assets/sobre-bolsillo.webp">
+<link rel="preload" as="image" href="../assets/sobre-solapa.webp">
+<link rel="preload" as="image" href="../assets/sobre-tarjeta.webp">
 <style>
 .snap::-webkit-scrollbar{display:none}
 *{box-sizing:border-box}
@@ -33,89 +33,38 @@ a:hover{color:#5E5340}
 img{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
-/* ---------- Sobre cuadrado con relieve en seco (opción 8 de /sobres) ---------- */
-.sobre{--w:min(80vw,46vh,400px);position:relative;width:var(--w);aspect-ratio:1}
+/* ---------- Sobre cuadrado (opción 8 de /sobres): piezas ya renderizadas en assets/sobre-*.webp ---------- */
+.sobre{--w:min(80vw,46vh,400px);position:relative;width:var(--w);aspect-ratio:1;will-change:transform}
 .sobre > *{position:absolute}
 .rsvp-hoja{max-height:94vh;max-height:94dvh;overscroll-behavior:contain}
 .s-fondo{inset:0;background:#7B9373;box-shadow:0 28px 42px -18px rgba(74,65,48,.5)}
-.sobre,.s-tarjeta,.s-solapa{will-change:transform}
-.s-tarjeta{left:7%;right:7%;top:4%;height:92%;overflow:hidden;background:#FAF6F2;box-shadow:0 8px 18px -10px rgba(74,65,48,.45);text-align:center}
-.s-grano{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .22 0 0 0 0 .15 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.5}
-.s-tarjeta .s-grano{opacity:.28}
-.s-nombres{position:absolute;left:0;right:0;top:52%;font-family:'Pinyon Script',cursive;font-size:calc(var(--w)*.098);line-height:1.2;color:#796C51;text-shadow:0 1px 0 rgba(255,255,255,.75)}
-.s-fecha{position:absolute;left:0;right:0;top:68%;font-family:'Cormorant Garamond',serif;font-size:calc(var(--w)*.038);font-weight:500;letter-spacing:.3em;padding-left:.3em;color:#5E5340}
-.s-sombra{position:absolute;inset:0;filter:drop-shadow(2px 0 3px rgba(50,42,28,.25))}
-.s-papel{position:absolute;inset:0;overflow:hidden;background:#9AAC94}
-.s-bolsillo{clip-path:polygon(0 0,100% 0,50% 50%,100% 100%,0 100%)}
-.s-solapa{inset:0;transform-origin:100% 50%;transition:transform 1100ms cubic-bezier(.45,.05,.55,.95) 250ms,z-index 0s linear 800ms}
-.s-solapa-fuera{position:absolute;inset:0;transition:opacity 0s linear 800ms;filter:drop-shadow(-2px 0 3px rgba(40,40,10,.28))}
-.s-solapa-fuera .s-papel{clip-path:polygon(100% 0,100% 100%,50% 50%)}
-.s-solapa-dentro{position:absolute;left:50%;right:0;top:0;bottom:0;transform:rotateY(180deg);transition:opacity 0s linear 800ms;background:linear-gradient(90deg,#91A58A,#A6B6A1);clip-path:polygon(0 0,0 100%,100% 50%)}
-.s-pliegues{position:absolute;inset:0;width:100%;height:100%}
-.s-rel{position:absolute;filter:drop-shadow(-.8px -.8px .2px rgba(255,255,255,.42)) drop-shadow(1px 1.2px .6px rgba(45,60,40,.42))}
-.s-rel i{display:block;width:100%;height:100%;background:#9AAC94;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
-.s-rel.palma i{-webkit-mask-image:url(../assets/palmera-marron.png);mask-image:url(../assets/palmera-marron.png)}
-.s-rel.sol i{-webkit-mask-image:url(../assets/sol-dorado.png);mask-image:url(../assets/sol-dorado.png)}
-.s-rel.concha i{-webkit-mask-image:url(../assets/concha-marron.png);mask-image:url(../assets/concha-marron.png)}
-.s-rel.palma-i{left:-10%;bottom:-6%;width:62%;height:84%;transform:rotate(-8deg)}
-.s-rel.palma-d{right:-12%;bottom:-4%;width:54%;height:70%;transform:scaleX(-1) rotate(-10deg)}
-.s-rel.sol-a{right:6%;top:6%;width:24%;aspect-ratio:1}
-.s-rel.concha-b{left:38%;bottom:5%;width:20%;aspect-ratio:1;transform:rotate(12deg)}
-.s-tarjeta .s-rel{left:20%;right:20%;top:8%;height:43%;filter:drop-shadow(-1px -1px .3px rgba(255,255,255,.9)) drop-shadow(1.2px 1.6px 1px rgba(70,60,40,.26))}
-.s-tarjeta .s-rel i{background:#FAF6F2}
-/* la hoja sale por el lado abierto y, ya fuera del bolsillo, queda delante del sobre */
-@keyframes s-tarjeta-sale{0%{transform:none;z-index:2;animation-timing-function:cubic-bezier(.3,.1,.25,1)}52%{transform:translateX(108%) rotate(2deg) scale(1.02);z-index:2;animation-timing-function:cubic-bezier(.45,0,.2,1)}52.1%{z-index:7}100%{transform:translateX(47%) rotate(4deg);z-index:7}}
+.s-tarjeta{left:7%;top:4%;width:86%;height:92%;max-width:none;box-shadow:0 8px 18px -10px rgba(74,65,48,.45);will-change:transform}
+.s-capa{left:0;top:0;width:100%;height:100%;max-width:none}
+.s-solapa{inset:0;transform-origin:100% 50%;will-change:transform;transition:transform 1100ms cubic-bezier(.45,.05,.55,.95) 150ms,z-index 0s linear 700ms}
+.s-solapa-fuera{position:absolute;inset:0;width:100%;height:100%;max-width:none;transition:opacity 0s linear 700ms}
+.s-solapa-dentro{position:absolute;left:50%;right:0;top:0;bottom:0;transform:rotateY(180deg);transition:opacity 0s linear 700ms;background:linear-gradient(90deg,#91A58A,#A6B6A1);clip-path:polygon(0 0,0 100%,100% 50%)}
 </style>
 </helmet>
 
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.55;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.28 0 0 0 0 0.16 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
 
 <sc-if value="{{ showEnvelope }}" hint-placeholder-val="{{ true }}">
-<div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="{{ envLabel }}" style="position:fixed;inset:0;z-index:100;overflow:hidden;touch-action:none;cursor:pointer;background:#F3ECE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 1100ms cubic-bezier(.4,0,.2,1);opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
+<div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="{{ envLabel }}" style="position:fixed;inset:0;z-index:100;overflow:hidden;touch-action:none;cursor:pointer;background:#F3ECE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 1100ms ease-in-out 350ms;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
   <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
   <div style="position:relative;font-family:'Pinyon Script',cursive;font-size:clamp(44px,12vw,60px);line-height:1.2;padding:0 .1em .2em;color:#796C51;transition:opacity 700ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
-  <div class="sobre" style="transition:transform 2200ms cubic-bezier(.4,0,.2,1) 700ms;transform:{{ sobreT }};">
+  <div style="position:relative;will-change:opacity,transform;transition:opacity 800ms ease-out,transform 1200ms cubic-bezier(.25,.1,.25,1);opacity:{{ compOp }};transform:{{ compT }};">
+  <div class="sobre" style="transition:transform 2200ms cubic-bezier(.3,0,.15,1) 500ms;transform:{{ sobreT }};">
     <div class="s-fondo" style="z-index:1;"></div>
-    <div class="s-tarjeta" style="z-index:{{ cardZ }};transform:{{ cardT }};animation:{{ cardAnim }};">
-      <div class="s-rel concha"><i></i></div>
-      <div class="s-nombres">{{ c.coupleNames }}</div>
-      <div class="s-fecha">03 | 04 | 2027</div>
-      <div class="s-grano"></div>
-    </div>
-    <div style="z-index:3;inset:0;">
-      <div class="s-sombra">
-        <div class="s-papel s-bolsillo">
-          <div class="s-rel palma palma-i"><i></i></div>
-          <div class="s-rel palma palma-d"><i></i></div>
-          <div class="s-rel sol sol-a"><i></i></div>
-          <div class="s-rel concha concha-b"><i></i></div>
-          <svg class="s-pliegues" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0 0 L50 50 L0 100" fill="none" stroke="rgba(40,55,35,.18)" stroke-width=".5"></path>
-            <path d="M100 0 L50 50 L100 100" fill="none" stroke="rgba(255,255,255,.3)" stroke-width=".7"></path>
-          </svg>
-          <div class="s-grano"></div>
-        </div>
-      </div>
-    </div>
+    <img class="s-tarjeta" src="../assets/sobre-tarjeta.webp" alt="Ronald &amp; Mafe · 03 | 04 | 2027" style="z-index:2;transition:transform 2200ms cubic-bezier(.3,0,.15,1) 500ms;transform:{{ cardT }};"></img>
+    <img class="s-capa" src="../assets/sobre-bolsillo.webp" alt="" style="z-index:3;"></img>
     <div class="s-solapa" style="z-index:{{ flapZ }};transform:{{ flapT }};">
-      <div class="s-solapa-fuera" style="opacity:{{ flapOutOp }};">
-        <div class="s-papel">
-          <div class="s-rel palma palma-i"><i></i></div>
-          <div class="s-rel palma palma-d"><i></i></div>
-          <div class="s-rel sol sol-a"><i></i></div>
-          <div class="s-rel concha concha-b"><i></i></div>
-          <svg class="s-pliegues" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M100 0 L50 50 L100 100 Z" fill="rgba(255,255,255,.07)"></path>
-            <path d="M100 0 L50 50 L100 100" fill="none" stroke="rgba(40,55,35,.3)" stroke-width=".7"></path>
-          </svg>
-          <div class="s-grano"></div>
-        </div>
-      </div>
+      <img class="s-solapa-fuera" src="../assets/sobre-solapa.webp" alt="" style="opacity:{{ flapOutOp }};"></img>
       <div class="s-solapa-dentro" style="opacity:{{ flapInOp }};"></div>
     </div>
     <div data-anim="pulse" style="z-index:6;left:39%;top:39%;width:22%;aspect-ratio:1;">
       <img src="../assets/sello.png" alt="Sello de cera R&amp;M" style="position:absolute;inset:0;width:100%;filter:drop-shadow(0 6px 8px rgba(60,50,30,.4));transition:transform 700ms ease-out, opacity 600ms ease-out;transform:{{ sealT }};opacity:{{ sealOp }};"></img>
     </div>
+  </div>
   </div>
   <div style="position:relative;font-size:11px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#796C51;text-align:center;transition:opacity 700ms ease;opacity:{{ hintOp }};">{{ hintText }}</div>
 </div>
@@ -479,7 +428,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this.reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    this.timer = setInterval(() => { if (this.state.stage !== 1) this.setState({ now: Date.now() }); }, 1000);
     this.setupLoops();
     this.setupIntro();
     this.setupReveal();
@@ -563,9 +512,9 @@ class Component extends DCLogic {
     window.scrollTo(0, 0);
     document.body.style.overflow = '';
     this.setState({ stage: 2 });
-    this.playIntro();
     this.startObserving();
-    this.timeouts.push(setTimeout(() => this.setState({ stage: 3 }), this.reduced ? 60 : 1150));
+    this.timeouts.push(setTimeout(() => this.playIntro(), this.reduced ? 0 : 550));
+    this.timeouts.push(setTimeout(() => this.setState({ stage: 3 }), this.reduced ? 60 : 1500));
   };
 
   // Deslizar, rueda o teclado: mientras el sobre está en pantalla la página no se mueve
@@ -671,12 +620,12 @@ class Component extends DCLogic {
       flapT: open ? 'perspective(1600px) rotateY(180deg)' : 'perspective(1600px) rotateY(0deg)',
       sealT: open ? 'scale(1.05)' : 'none',
       sealOp: open ? 0 : 1,
-      cardT: open ? 'translateX(47%) rotate(4deg)' : 'none',
-      cardZ: open ? 7 : 2,
-      cardAnim: open && !this.reduced ? 's-tarjeta-sale 2200ms linear 700ms both' : 'none',
-      sobreT: open ? 'translateX(calc(var(--w)*-.185)) scale(.85)' : 'none',
+      cardT: open ? 'translateX(79%) rotate(2deg)' : 'none',
+      sobreT: open ? 'translateX(min(calc(var(--w)*-.2745),calc(50vw - 12px - var(--w)*.999))) scale(.9)' : 'none',
       hintText: this.state.ready ? 'DESLIZA PARA CONTINUAR' : 'TOCA EL SELLO PARA ABRIR',
-      hintOp: !open || this.state.ready ? 1 : 0,
+      hintOp: st >= 2 ? 0 : !open || this.state.ready ? 1 : 0,
+      compOp: st >= 2 ? 0 : 1,
+      compT: st >= 2 ? 'translateY(-14px)' : 'none',
       envLabel: open ? 'Desliza para continuar a la invitación' : 'Toca el sello para abrir la invitación',
       textOpacity: open ? 0 : 1,
       envOpacity: st >= 2 ? 0 : 1, envPointer: st >= 2 ? 'none' : 'auto',
