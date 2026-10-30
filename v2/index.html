@@ -20,6 +20,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/sello.png">
+<link rel="preload" as="image" href="../assets/palmera-marron.png">
+<link rel="preload" as="image" href="../assets/sol-dorado.png">
+<link rel="preload" as="image" href="../assets/concha-marron.png">
 <style>
 .snap::-webkit-scrollbar{display:none}
 *{box-sizing:border-box}
@@ -29,6 +32,37 @@ a{color:#796C51;text-decoration:none}
 a:hover{color:#5E5340}
 img{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ---------- Sobre cuadrado con relieve en seco (opción 8 de /sobres) ---------- */
+.sobre{--w:min(80vw,46vh,400px);position:relative;width:var(--w);aspect-ratio:1}
+.sobre.abierto{--w:min(80vw,400px);margin:0 auto}
+.sobre > *{position:absolute}
+.s-fondo{inset:0;background:#7B9373;box-shadow:0 28px 42px -18px rgba(74,65,48,.5)}
+.s-tarjeta{left:7%;right:7%;top:4%;height:92%;overflow:hidden;background:#FAF6F2;box-shadow:0 8px 18px -10px rgba(74,65,48,.45);text-align:center}
+.s-grano{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .22 0 0 0 0 .15 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.5}
+.s-tarjeta .s-grano{opacity:.28}
+.s-nombres{position:absolute;left:0;right:0;top:41.5%;font-family:'Pinyon Script',cursive;font-size:calc(var(--w)*.085);line-height:1.2;color:#796C51;text-shadow:0 1px 0 rgba(255,255,255,.75)}
+.s-fecha{position:absolute;left:0;right:0;top:55.3%;font-family:'Cormorant Garamond',serif;font-size:calc(var(--w)*.032);font-weight:500;letter-spacing:.3em;padding-left:.3em;color:#5E5340}
+.s-sombra{position:absolute;inset:0;filter:drop-shadow(0 -2px 3px rgba(50,42,28,.25))}
+.s-papel{position:absolute;inset:0;overflow:hidden;background:#9AAC94}
+.s-bolsillo{clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%)}
+.s-solapa{inset:0;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transform-origin:50% 0;transition:transform 1000ms cubic-bezier(.55,.05,.3,1) 520ms,z-index 0s linear 950ms}
+.s-solapa-fuera{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;filter:drop-shadow(0 2px 3px rgba(40,40,10,.28))}
+.s-solapa-fuera .s-papel{clip-path:polygon(0 0,100% 0,50% 52%)}
+.s-solapa-dentro{position:absolute;left:0;right:0;top:0;height:52%;transform:rotateX(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden;background:linear-gradient(180deg,#A6B6A1,#91A58A);clip-path:polygon(0 100%,100% 100%,50% 0)}
+.s-solapa-abierta{left:0;right:0;top:-52%;height:52%;background:linear-gradient(180deg,#A6B6A1,#91A58A);clip-path:polygon(0 100%,100% 100%,50% 0)}
+.s-pliegues{position:absolute;inset:0;width:100%;height:100%}
+.s-rel{position:absolute;filter:drop-shadow(-.8px -.8px .2px rgba(255,255,255,.42)) drop-shadow(1px 1.2px .6px rgba(45,60,40,.42))}
+.s-rel i{display:block;width:100%;height:100%;background:#9AAC94;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
+.s-rel.palma i{-webkit-mask-image:url(../assets/palmera-marron.png);mask-image:url(../assets/palmera-marron.png)}
+.s-rel.sol i{-webkit-mask-image:url(../assets/sol-dorado.png);mask-image:url(../assets/sol-dorado.png)}
+.s-rel.concha i{-webkit-mask-image:url(../assets/concha-marron.png);mask-image:url(../assets/concha-marron.png)}
+.s-rel.palma-i{left:-10%;bottom:-6%;width:62%;height:84%;transform:rotate(-8deg)}
+.s-rel.palma-d{right:-12%;bottom:-4%;width:54%;height:70%;transform:scaleX(-1) rotate(-10deg)}
+.s-rel.sol-a{right:6%;top:6%;width:24%;aspect-ratio:1}
+.s-rel.concha-b{left:38%;bottom:5%;width:20%;aspect-ratio:1;transform:rotate(12deg)}
+.s-tarjeta .s-rel{left:26%;right:26%;top:7%;height:33.5%;filter:drop-shadow(-1px -1px .3px rgba(255,255,255,.9)) drop-shadow(1.2px 1.6px 1px rgba(70,60,40,.26))}
+.s-tarjeta .s-rel i{background:#FAF6F2}
 </style>
 </helmet>
 
@@ -38,20 +72,46 @@ img{display:block;max-width:100%}
 <div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="Toca el sello para abrir la invitación" style="position:fixed;inset:0;z-index:100;overflow:hidden;cursor:pointer;background:#F3ECE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 900ms ease;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
   <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
   <div style="position:relative;font-family:'Pinyon Script',cursive;font-size:clamp(44px,12vw,60px);line-height:1.2;padding:0 .1em .2em;color:#796C51;transition:opacity 500ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
-  <div style="position:relative;width:min(84vw,400px);aspect-ratio:1.45;">
-    <div style="position:absolute;inset:0;z-index:1;background:#879D80;box-shadow:0 28px 42px -18px rgba(74,65,48,.5);"></div>
-    <div style="position:absolute;left:6%;right:6%;top:6%;bottom:6%;z-index:2;background:#F3ECE6;border:1px solid rgba(149,140,102,.45);outline:1px solid rgba(149,140,102,.25);outline-offset:-7px;display:flex;flex-direction:column;align-items:center;padding-top:8%;gap:8px;transition:transform 1200ms cubic-bezier(.22,.8,.3,1) 950ms;transform:{{ cardT }};">
-      <img src="../assets/sello.png" alt="" style="width:26%;height:auto;filter:drop-shadow(0 3px 4px rgba(50,42,28,.3));"></img>
+  <div class="sobre" style="transform-origin:50% 0;transition:transform 1200ms cubic-bezier(.22,.8,.3,1) 950ms;transform:{{ sobreT }};">
+    <div class="s-fondo" style="z-index:1;"></div>
+    <div class="s-tarjeta" style="z-index:2;transition:transform 1200ms cubic-bezier(.22,.8,.3,1) 950ms;transform:{{ cardT }};">
+      <div class="s-rel concha"><i></i></div>
+      <div class="s-nombres">{{ c.coupleNames }}</div>
+      <div class="s-fecha">03 | 04 | 2027</div>
+      <div class="s-grano"></div>
     </div>
-    <div style="position:absolute;inset:0;z-index:3;filter:drop-shadow(0 -2px 3px rgba(50,42,28,.25));">
-      <div style="position:absolute;inset:0;background:#9AAC94;clip-path:polygon(0 0,52% 56%,0 100%);"></div>
-      <div style="position:absolute;inset:0;background:#9AAC94;clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
-      <div style="position:absolute;inset:0;background:#8DA186;clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
+    <div style="z-index:3;inset:0;">
+      <div class="s-sombra">
+        <div class="s-papel s-bolsillo">
+          <div class="s-rel palma palma-i"><i></i></div>
+          <div class="s-rel palma palma-d"><i></i></div>
+          <div class="s-rel sol sol-a"><i></i></div>
+          <div class="s-rel concha concha-b"><i></i></div>
+          <svg class="s-pliegues" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 100 L50 48 L100 100" fill="none" stroke="rgba(40,55,35,.18)" stroke-width=".5"></path>
+            <path d="M0 0 L50 52 L100 0" fill="none" stroke="rgba(255,255,255,.3)" stroke-width=".7"></path>
+          </svg>
+          <div class="s-grano"></div>
+        </div>
+      </div>
     </div>
-    <div style="position:absolute;inset:0;z-index:{{ flapZ }};transform-origin:50% 0;transition:transform 1000ms cubic-bezier(.55,.05,.3,1) 520ms;transform:{{ flapT }};filter:drop-shadow(0 6px 6px rgba(40,40,10,.25));">
-      <div style="position:absolute;inset:0;background:#A6B6A1;clip-path:polygon(0 0,100% 0,50% 62%);"></div>
+    <div class="s-solapa" style="z-index:{{ flapZ }};transform:{{ flapT }};">
+      <div class="s-solapa-fuera">
+        <div class="s-papel">
+          <div class="s-rel palma palma-i"><i></i></div>
+          <div class="s-rel palma palma-d"><i></i></div>
+          <div class="s-rel sol sol-a"><i></i></div>
+          <div class="s-rel concha concha-b"><i></i></div>
+          <svg class="s-pliegues" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 0 L50 52 L100 0 Z" fill="rgba(255,255,255,.07)"></path>
+            <path d="M0 0 L50 52 L100 0" fill="none" stroke="rgba(40,55,35,.3)" stroke-width=".7"></path>
+          </svg>
+          <div class="s-grano"></div>
+        </div>
+      </div>
+      <div class="s-solapa-dentro"></div>
     </div>
-    <div data-anim="pulse" style="position:absolute;z-index:6;left:37%;top:calc(62% - 13%*1.45);width:26%;aspect-ratio:1;">
+    <div data-anim="pulse" style="z-index:6;left:39%;top:41%;width:22%;aspect-ratio:1;">
       <img src="../assets/sello.png" alt="Sello de cera R&amp;M" style="position:absolute;inset:0;width:100%;filter:drop-shadow(0 6px 8px rgba(60,50,30,.4));transition:transform 1100ms cubic-bezier(.5,0,.25,1), opacity 600ms ease 450ms;transform:{{ sealT }};opacity:{{ sealOp }};"></img>
     </div>
   </div>
@@ -61,21 +121,31 @@ img{display:block;max-width:100%}
 
 <main style="position:relative;overflow:hidden;">
 
-  <header data-screen-label="01b Sobre abierto" style="position:relative;background:#F3ECE6;padding:calc(min(84vw,440px)*.5 + 56px) 24px 104px;overflow:hidden;">
+  <header data-screen-label="01b Sobre abierto" style="position:relative;background:#F3ECE6;padding:calc(min(80vw,400px)*.52 + 56px) 24px 104px;overflow:hidden;">
     <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-dorado.webp);background-size:360px;opacity:.3;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 52%,transparent 18%,#000 80%);mask-image:radial-gradient(ellipse 60% 70% at 50% 52%,transparent 18%,#000 80%);"></div>
     <div style="position:absolute;left:50%;top:46%;width:min(150vw,900px);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(255,248,234,.75),rgba(255,248,234,0));pointer-events:none;"></div>
-    <div data-parallax="env" style="position:relative;width:min(84vw,440px);aspect-ratio:1.45;margin:0 auto;">
-      <div aria-hidden="true" style="position:absolute;left:4%;right:4%;bottom:-9%;height:14%;background:radial-gradient(closest-side,rgba(74,65,48,.38),rgba(74,65,48,0));filter:blur(6px);"></div>
-      <div style="position:absolute;left:0;right:0;top:-62%;height:62%;background:linear-gradient(180deg,#A6B6A1,#91A58A);clip-path:polygon(0 100%,100% 100%,50% 0);"></div>
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg,#879D80,#7B9373);"></div>
-      <div style="position:absolute;left:7%;right:7%;top:5%;bottom:7%;transform:translateY(-62%);background:linear-gradient(180deg,#FAF6F2,#FAF6F2);border:1px solid rgba(149,140,102,.5);outline:1px solid rgba(149,140,102,.28);outline-offset:-8px;box-shadow:0 10px 24px -14px rgba(74,65,48,.45);display:flex;flex-direction:column;align-items:center;padding-top:9%;gap:10px;">
-        <img src="../assets/sello.png" alt="" style="width:25%;height:auto;filter:drop-shadow(0 4px 5px rgba(60,50,30,.3));"></img>
-        <div style="width:34px;height:1px;background:#958C66;"></div>
+    <div data-parallax="env" class="sobre abierto">
+      <div aria-hidden="true" style="left:4%;right:4%;bottom:-7%;height:12%;background:radial-gradient(closest-side,rgba(74,65,48,.38),rgba(74,65,48,0));filter:blur(6px);"></div>
+      <div class="s-solapa-abierta"></div>
+      <div class="s-fondo" style="box-shadow:none;"></div>
+      <div class="s-tarjeta" style="transform:translateY(-46%);">
+        <div class="s-rel concha"><i></i></div>
+        <div class="s-nombres">{{ c.coupleNames }}</div>
+        <div class="s-fecha">03 | 04 | 2027</div>
+        <div class="s-grano"></div>
       </div>
-      <div style="position:absolute;inset:0;filter:drop-shadow(0 -2px 4px rgba(50,42,28,.22));">
-        <div style="position:absolute;inset:0;background:linear-gradient(100deg,#A3B39E,#9AAC94);clip-path:polygon(0 0,52% 56%,0 100%);"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(260deg,#A3B39E,#9AAC94);clip-path:polygon(100% 0,48% 56%,100% 100%);"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg,#91A58A,#83997B);clip-path:polygon(0 100%,50% 48%,100% 100%);"></div>
+      <div class="s-sombra">
+        <div class="s-papel s-bolsillo">
+          <div class="s-rel palma palma-i"><i></i></div>
+          <div class="s-rel palma palma-d"><i></i></div>
+          <div class="s-rel sol sol-a"><i></i></div>
+          <div class="s-rel concha concha-b"><i></i></div>
+          <svg class="s-pliegues" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 100 L50 48 L100 100" fill="none" stroke="rgba(40,55,35,.18)" stroke-width=".5"></path>
+            <path d="M0 0 L50 52 L100 0" fill="none" stroke="rgba(255,255,255,.3)" stroke-width=".7"></path>
+          </svg>
+          <div class="s-grano"></div>
+        </div>
       </div>
     </div>
   </header>
@@ -503,7 +573,8 @@ class Component extends DCLogic {
     this.playMusic(3000); // el toque del invitado habilita el audio
     (this.pulse || []).forEach(a => a.cancel());
     const t = this.reduced ? [60, 120] : [2500, 3400];
-    this.setState({ stage: 1 });
+    const [a, b] = [this.q('.sobre:not(.abierto)')[0], this.q('.sobre.abierto')[0]].map(el => el.getBoundingClientRect());
+    this.setState({ stage: 1, sobreT: `translateY(${b.top - a.top}px) scale(${b.width / a.width})` });
     this.timeouts.push(setTimeout(() => { window.scrollTo(0, 0); document.body.style.overflow = ''; this.setState({ stage: 2 }); this.playIntro(); this.startObserving(); }, t[0]));
     this.timeouts.push(setTimeout(() => this.setState({ stage: 3 }), t[1]));
   };
@@ -586,7 +657,8 @@ class Component extends DCLogic {
       flapT: open ? 'perspective(1200px) rotateX(180deg)' : 'perspective(1200px) rotateX(0deg)',
       sealT: open ? 'translateY(115%) scale(.94)' : 'none',
       sealOp: open ? 0 : 1,
-      cardT: st >= 2 ? 'translateY(-58%) scale(1.9)' : open ? 'translateY(-58%)' : 'translateY(0)',
+      cardT: open ? 'translateY(-46%)' : 'translateY(0)',
+      sobreT: this.state.sobreT || 'none',
       textOpacity: open ? 0 : 1,
       envOpacity: st >= 2 ? 0 : 1, envPointer: st >= 2 ? 'none' : 'auto',
       cd: this.countdown(),
