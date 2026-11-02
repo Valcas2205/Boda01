@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#F3ECE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Tangerine:wght@700&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/sello.png">
 <link rel="preload" as="image" href="../assets/sobre-bolsillo.webp">
 <link rel="preload" as="image" href="../assets/sobre-solapa.webp">
@@ -33,6 +33,8 @@ a:hover{color:#5E5340}
 img{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-property:opacity!important}.s-solapa-fuera,.s-solapa-dentro{transition:none!important}}
 
+/* «&» de los nombres: Tangerine en negrita, con el grosor de los trazos de la letra manuscrita */
+.amp{font-family:'Tangerine',cursive;font-weight:700;font-size:1.15em;line-height:0;padding:0 .08em}
 /* ---------- Sobre cuadrado (opción 8 de /sobres): piezas ya renderizadas en assets/sobre-*.webp ---------- */
 .sobre{--w:min(80vw,46vh,400px);position:relative;width:var(--w);aspect-ratio:1;will-change:transform}
 .sobre > *{position:absolute}
@@ -53,7 +55,7 @@ img{display:block;max-width:100%}
 <sc-if value="{{ showEnvelope }}" hint-placeholder-val="{{ true }}">
 <div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="{{ envLabel }}" style="position:fixed;inset:0;z-index:100;overflow:hidden;touch-action:none;cursor:pointer;background:#F3ECE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 1100ms ease-in-out 350ms;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
   <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
-  <div style="position:relative;font-family:'Pinyon Script',cursive;font-size:clamp(44px,12vw,60px);line-height:1.2;padding:0 .1em .2em;color:#796C51;transition:opacity 700ms ease;opacity:{{ textOpacity }};">Ronald &amp; Mafe</div>
+  <div style="position:relative;font-family:'Pinyon Script',cursive;font-size:clamp(44px,12vw,60px);line-height:1.2;padding:0 .1em .2em;color:#796C51;transition:opacity 700ms ease;opacity:{{ textOpacity }};">{{ c.nameA }} <span class="amp">&amp;</span> {{ c.nameB }}</div>
   <div style="position:relative;will-change:opacity,transform;transition:opacity 800ms ease-out,transform 1200ms cubic-bezier(.25,.1,.25,1);opacity:{{ compOp }};transform:{{ compT }};">
   <div class="sobre" style="transition:transform 2200ms cubic-bezier(.3,0,.15,1) 500ms;transform:{{ sobreT }};">
     <div class="s-fondo" style="z-index:1;"></div>
@@ -77,8 +79,8 @@ img{display:block;max-width:100%}
   <section data-screen-label="02 Portada" style="position:relative;background:#F3ECE6;padding:clamp(40px,8vh,72px) 24px 80px;text-align:center;">
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F3ECE6"></path></svg>
     <div style="max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;">
-      <div data-hero-write="1" style="white-space:nowrap;font-family:'Pinyon Script',cursive;font-size:clamp(44px,13vw,70px);line-height:1.2;color:#5E5340;padding:0 .1em .22em;">{{ c.coupleNames }}</div>
-      <img data-hero="2" src="../assets/sello.png" alt="Sello R&amp;M" style="width:130px;height:auto;filter:drop-shadow(0 6px 8px rgba(50,42,28,.3));"></img>
+      <div data-hero-write="1" style="white-space:nowrap;font-family:'Pinyon Script',cursive;font-size:clamp(44px,13vw,70px);line-height:1.2;color:#5E5340;padding:0 .1em .22em;">{{ c.nameA }} <span class="amp">&amp;</span> {{ c.nameB }}</div>
+      <img data-hero="2" src="../assets/monograma-marron.webp" alt="Monograma R&amp;M" style="width:110px;height:auto;"></img>
       <div data-hero="3" style="display:flex;flex-direction:column;gap:12px;">
         <div style="font-weight:500;font-size:16px;letter-spacing:.34em;padding-left:.34em;color:#5E5340;">{{ c.dateDisplay }}</div>
         <div style="font-weight:500;font-size:12px;letter-spacing:.3em;padding-left:.3em;color:#796C51;text-wrap:balance;">{{ c.locationDisplay }}</div>
@@ -111,7 +113,6 @@ img{display:block;max-width:100%}
           <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#3F3727;font-variant-numeric:tabular-nums;">{{ cd.m }}</div><div style="font-size:11px;letter-spacing:.26em;color:#3F3727;">MIN</div></div>
           <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#3F3727;font-variant-numeric:tabular-nums;">{{ cd.s }}</div><div style="font-size:11px;letter-spacing:.26em;color:#3F3727;">SEG</div></div>
         </div>
-        <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:16px;color:#3F3727;text-shadow:0 0 10px #F3ECE6,0 0 18px #F3ECE6;">{{ c.countdownCaption }}</div>
       </div>
     </section>
   FIN DISEÑO ALTERNATIVO -->
@@ -126,7 +127,6 @@ img{display:block;max-width:100%}
         <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#5E5340;font-variant-numeric:tabular-nums;">{{ cd.m }}</div><div style="font-size:11px;letter-spacing:.26em;color:#5E5340;">MIN</div></div>
         <div style="display:flex;flex-direction:column;gap:8px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,13vw,68px);line-height:1;color:#5E5340;font-variant-numeric:tabular-nums;">{{ cd.s }}</div><div style="font-size:11px;letter-spacing:.26em;color:#5E5340;">SEG</div></div>
       </div>
-      <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:16px;color:#5E5340;">{{ c.countdownCaption }}</div>
     </div>
   </section>
 
@@ -232,10 +232,12 @@ img{display:block;max-width:100%}
   <section data-screen-label="08 RSVP" style="position:relative;background:#F3ECE6;padding:88px 24px 80px;">
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F3ECE6"></path></svg>
     <div data-reveal="1" style="position:relative;max-width:400px;margin:0 auto;background:#F3ECE6;border:1px solid rgba(149,140,102,.55);outline:1px solid rgba(149,140,102,.25);outline-offset:-9px;border-radius:999px 999px 6px 6px;box-shadow:0 18px 38px -22px rgba(60,50,30,.45);padding:96px 26px 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
-      <img src="../assets/sello.png" alt="" loading="lazy" style="position:absolute;top:-30px;left:50%;width:84px;margin-left:-42px;transform:rotate(-6deg);filter:drop-shadow(0 5px 7px rgba(60,50,30,.3));"></img>
+      <img src="../assets/monograma-marron.webp" alt="" loading="lazy" style="position:absolute;top:30px;left:50%;width:58px;margin-left:-29px;"></img>
       <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#796C51;">RSVP</div>
       <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,32px);line-height:1.2;letter-spacing:.08em;color:#796C51;text-wrap:balance;">{{ c.rsvpTitle }}</h2>
       <p style="margin:0;font-family:'Jost',sans-serif;font-weight:300;font-size:15.5px;line-height:1.45;color:#5E5340;text-wrap:pretty;">{{ c.rsvpText }}</p>
+      <div style="width:36px;height:1px;background:#958C66;margin-top:2px;"></div>
+      <div style="font-size:11px;font-weight:500;letter-spacing:.24em;padding-left:.24em;line-height:1.6;color:#796C51;text-transform:uppercase;text-wrap:balance;">{{ c.adultsNote }}</div>
       <button type="button" onClick="{{ openForm }}" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;margin-top:14px;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;min-height:58px;border-radius:999px;background:#9AAC94;color:#4A4130;font-size:12px;font-weight:500;letter-spacing:.26em;padding-left:.26em;box-shadow:0 10px 22px -10px rgba(100,120,92,.7);" style-hover="background:#879D80;color:#4A4130;">CONFIRMAR ASISTENCIA</button>
     </div>
   </section>
@@ -353,14 +355,14 @@ class Component extends DCLogic {
   // ================= CONFIGURACIÓN: todos los textos, fechas y links =================
   CONFIG = {
     coupleNames: 'Ronald & Mafe',
+    nameA: 'Ronald', nameB: 'Mafe', // los nombres de la portada; el «&» va aparte, con su propia letra
     dateDisplay: '03 | 04 | 2027',
     locationDisplay: 'ISLA DE MARGARITA, VENEZUELA',
     weddingDateISO: '2027-04-03T15:30:00-04:00', // hora de Venezuela (UTC-4)
-    countdownCaption: 'para decir “sí, acepto”',
     events: [
       { icon: 'concha', title: 'White Party', date: 'JUEVES 01 · ABRIL · 2027', time: '6:00 PM', place: 'Lugar por confirmar', link: '' },
       { icon: 'cruz', title: 'Ceremonia', date: 'SÁBADO 03 · ABRIL · 2027', time: '3:30 PM', place: 'Catedral Nuestra Señora de la Asunción', link: 'https://maps.app.goo.gl/VgX8rsmx8gKoJEUz7' },
-      { icon: 'sol', title: 'Celebración', date: 'SÁBADO 03 · ABRIL · 2027', time: '6:00 PM', place: 'Downtown Beach Margarita, Isla de Margarita, Venezuela', link: '' },
+      { icon: 'sol', title: 'Celebración', date: 'SÁBADO 03 · ABRIL · 2027', time: '6:00 PM', place: 'Downtown Beach Margarita, Isla de Margarita, Venezuela', link: 'https://www.google.com/maps/place/Downtown+Beach+Club/@10.9887336,-63.8039532,17z/data=!3m1!4b1!4m6!3m5!1s0x8c318fdecddf5167:0x99f0afd69eaea1fb!8m2!3d10.9887336!4d-63.8039532' },
     ],
     dresscode: 'Vestimenta formal',
     whitePartyNote: '', // ej. 'White Party del jueves: total white' — '' lo oculta
@@ -380,9 +382,10 @@ class Component extends DCLogic {
     ],
     rsvpTitle: 'POR FAVOR CONFIRMA TU ASISTENCIA',
     rsvpText: '¡Nos hace muy feliz que puedas acompañarnos!',
+    adultsNote: 'Celebración sólo para adultos',
     whatsappPhone: '584245414804', // WhatsApp de quien recibe las confirmaciones — solo números, con código de país
     whatsappMessage: 'Hola, confirmo mi asistencia a la boda de Ronald & Mafe.',
-    giftsText: 'El mayor regalo es contar con su presencia este día y poder celebrar juntos. Sin embargo, si deseas tener un detalle con nosotros, te dejaremos la información de nuestros datos.',
+    giftsText: 'El mayor regalo es contar con su presencia este día y poder celebrar juntos. Si deseas tener un detalle con nosotros, te dejaremos abajo dos opciones.',
     zelle: [
       { label: 'ZELLE · MAFE', value: 'mafeazcunes@gmail.com' },
       { label: 'ZELLE · RONALD', value: '[ZELLE_RONALD]' },
