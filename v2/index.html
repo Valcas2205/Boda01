@@ -54,7 +54,7 @@ img{display:block;max-width:100%}
 
 <sc-if value="{{ showEnvelope }}" hint-placeholder-val="{{ true }}">
 <div data-screen-label="01 Sobre" onClick="{{ openEnvelope }}" role="button" tabindex="0" aria-label="{{ envLabel }}" style="position:fixed;inset:0;z-index:100;overflow:hidden;touch-action:none;cursor:pointer;background:#F3ECE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(36px,7vh,64px);transition:opacity 1100ms ease-in-out 350ms;opacity:{{ envOpacity }};pointer-events:{{ envPointer }};">
-  <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-armonia.png);background-size:420px;opacity:.3;pointer-events:none;"></div>
   <div style="position:relative;font-family:'Pinyon Script',cursive;font-size:clamp(44px,12vw,60px);line-height:1.2;padding:0 .1em .2em;color:#796C51;transition:opacity 700ms ease;opacity:{{ textOpacity }};">{{ c.nameA }} <span class="amp">&amp;</span> {{ c.nameB }}</div>
   <div style="position:relative;will-change:opacity,transform;transition:opacity 800ms ease-out,transform 1200ms cubic-bezier(.25,.1,.25,1);opacity:{{ compOp }};transform:{{ compT }};">
   <div class="sobre" style="transition:transform 2200ms cubic-bezier(.3,0,.15,1) 500ms;transform:{{ sobreT }};">
@@ -89,7 +89,7 @@ img{display:block;max-width:100%}
         <div style="position:relative;padding:9px;border:1px solid rgba(149,140,102,.55);border-radius:999px 999px 6px 6px;">
           <div data-hero-arch="1" style="position:relative;aspect-ratio:5/6;border-radius:999px 999px 2px 2px;overflow:hidden;background:#D5BD9C;">
             <div data-parallax="hero" style="position:absolute;left:0;right:0;top:-10%;bottom:-10%;">
-              <img data-anim="kenburns" src="../assets/playa-hero.webp" alt="Acuarela de la playa en Isla de Margarita" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:50% 78%;"></img>
+              <img data-anim="kenburns" src="../assets/playa-hero.webp" alt="Acuarela de la playa en Isla de Margarita" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:50% 78%;opacity:.75;"></img>
             </div>
           </div>
         </div>
@@ -136,13 +136,13 @@ img{display:block;max-width:100%}
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:40px;">
         <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#796C51;">ITINERARIO</div>
         <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,8vw,36px);letter-spacing:.16em;padding-left:.16em;color:#796C51;">CELEBREMOS JUNTOS</h2>
-        <div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:1px;background:#958C66;"></div><img src="../assets/concha-dorada.png" alt="" style="width:26px;filter:saturate(1.8) brightness(.8);"></img><div style="width:48px;height:1px;background:#958C66;"></div></div>
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:1px;background:#958C66;"></div><img src="../assets/concha-marron.png" alt="" style="width:26px;"></img><div style="width:48px;height:1px;background:#958C66;"></div></div>
       </div>
       <div style="position:relative;display:flex;flex-direction:column;gap:26px;">
         <div style="position:absolute;left:27px;top:28px;bottom:28px;width:1px;background:#796C51;"></div>
         <sc-for list="{{ c.events }}" as="ev" hint-placeholder-count="3">
           <div data-reveal="1" style="position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:start;">
-            <div style="position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#F3ECE6;border:1px solid #796C51;box-shadow:0 0 0 5px #F3ECE6;display:flex;align-items:center;justify-content:center;"><img src="{{ ev.iconSrc }}" alt="" style="width:34px;height:34px;object-fit:contain;"></img></div>
+            <div style="position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#F3ECE6;border:1px solid #796C51;box-shadow:0 0 0 5px #F3ECE6;display:flex;align-items:center;justify-content:center;"><div aria-hidden="true" style="width:34px;height:34px;background:#6E8767;-webkit-mask:url({{ ev.iconSrc }}) center/contain no-repeat;mask:url({{ ev.iconSrc }}) center/contain no-repeat;"></div></div>
             <div style="background:#F3ECE6;border:1px solid rgba(149,140,102,.45);border-radius:4px;box-shadow:0 14px 30px -22px rgba(60,50,30,.45);padding:20px 20px 22px;display:flex;flex-direction:column;gap:6px;">
               <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#958C66;">{{ ev.date }}</div>
               <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;line-height:1.1;color:#5E5340;">{{ ev.title }}</div>
@@ -205,7 +205,7 @@ img{display:block;max-width:100%}
     
     <div style="position:relative;max-width:520px;margin:0 auto;">
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:30px;">
-        <img src="../assets/concha-dorada.png" alt="" loading="lazy" style="filter:saturate(2.2) brightness(.72);width:46px;transform:rotate(-6deg);"></img>
+        <img src="../assets/concha-marron.png" alt="" loading="lazy" style="width:46px;transform:rotate(-6deg);"></img>
         <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#5E5340;">DÓNDE COMER</div>
         <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#5E5340;text-wrap:balance;">RESTAURANTES RECOMENDADOS</h2>
       </div>
@@ -238,7 +238,12 @@ img{display:block;max-width:100%}
       <p style="margin:0;font-family:'Jost',sans-serif;font-weight:300;font-size:15.5px;line-height:1.45;color:#5E5340;text-wrap:pretty;">{{ c.rsvpText }}</p>
       <div style="width:36px;height:1px;background:#958C66;margin-top:2px;"></div>
       <div style="font-size:11px;font-weight:500;letter-spacing:.24em;padding-left:.24em;line-height:1.6;color:#796C51;text-transform:uppercase;text-wrap:balance;">{{ c.adultsNote }}</div>
+      <sc-if value="{{ hasRsvpUrl }}" hint-placeholder-val="{{ true }}">
+      <a href="{{ rsvpUrl }}" target="_blank" rel="noopener" style="text-decoration:none;box-sizing:border-box;font-family:'Jost',sans-serif;margin-top:14px;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;min-height:58px;border-radius:999px;background:#9AAC94;color:#4A4130;font-size:12px;font-weight:500;letter-spacing:.26em;padding-left:.26em;box-shadow:0 10px 22px -10px rgba(100,120,92,.7);" style-hover="background:#879D80;color:#4A4130;">CONFIRMAR ASISTENCIA</a>
+      </sc-if>
+      <sc-if value="{{ noRsvpUrl }}" hint-placeholder-val="{{ false }}">
       <button type="button" onClick="{{ openForm }}" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;margin-top:14px;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;min-height:58px;border-radius:999px;background:#9AAC94;color:#4A4130;font-size:12px;font-weight:500;letter-spacing:.26em;padding-left:.26em;box-shadow:0 10px 22px -10px rgba(100,120,92,.7);" style-hover="background:#879D80;color:#4A4130;">CONFIRMAR ASISTENCIA</button>
+      </sc-if>
     </div>
   </section>
 
@@ -251,16 +256,8 @@ img{display:block;max-width:100%}
         <div style="width:36px;height:1px;background:#958C66;"></div>
         <p style="margin:0;font-family:'Jost',sans-serif;font-weight:300;font-size:16px;line-height:1.5;color:#5E5340;text-wrap:pretty;">{{ c.giftsText }}</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <sc-for list="{{ zelle }}" as="z" hint-placeholder-count="2">
-          <div data-reveal="1" style="background:#F3ECE6;border-radius:4px;box-shadow:0 16px 30px -22px rgba(0,0,0,.55);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
-            <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
-              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#958C66;">{{ z.label }}</div>
-              <div style="font-size:15.5px;color:#5E5340;overflow-wrap:anywhere;">{{ z.value }}</div>
-            </div>
-            <button type="button" onClick="{{ z.onCopy }}" style="flex-shrink:0;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #5E5340;background:{{ z.bg }};color:{{ z.fg }};font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.2em;cursor:pointer;transition:background 200ms,color 200ms;">{{ z.cta }}</button>
-          </div>
-        </sc-for>
+      <div data-reveal="1" style="display:flex;justify-content:center;">
+        <button type="button" onClick="{{ openGifts }}" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;display:flex;align-items:center;justify-content:center;width:100%;max-width:300px;min-height:58px;border-radius:999px;background:#9AAC94;color:#4A4130;font-size:12px;font-weight:500;letter-spacing:.26em;padding-left:.26em;box-shadow:0 10px 22px -10px rgba(100,120,92,.7);" style-hover="background:#879D80;color:#4A4130;">VER OPCIONES DE REGALO</button>
       </div>
     </div>
   </section>
@@ -275,6 +272,32 @@ img{display:block;max-width:100%}
     </div>
   </section>
 </main>
+
+<sc-if value="{{ giftsOpen }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="09b Opciones de regalo" onClick="{{ closeGifts }}" style="position:fixed;inset:0;z-index:150;background:rgba(50,42,28,.55);display:flex;align-items:center;justify-content:center;padding:16px;">
+  <div role="dialog" aria-modal="true" aria-label="Opciones de regalo" onClick="{{ stop }}" style="position:relative;width:100%;max-width:360px;max-height:88dvh;overflow-y:auto;background:#D5BD9C;border-radius:14px;box-shadow:0 14px 40px rgba(50,42,28,.35);padding:34px 18px 22px;">
+    <button type="button" onClick="{{ closeGifts }}" aria-label="Cerrar" style="position:absolute;top:0;right:0;width:44px;height:44px;border:none;background:transparent;color:#5E5340;font-size:24px;line-height:1;cursor:pointer;font-family:'Cormorant Garamond',serif;">×</button>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;margin-bottom:20px;">
+      <div style="font-size:12px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#5E5340;">OPCIONES DE REGALO</div>
+      <div style="width:36px;height:1px;background:#958C66;"></div>
+    </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ zelle }}" as="z" hint-placeholder-count="2">
+          <div style="background:#F3ECE6;border-radius:4px;box-shadow:0 16px 30px -22px rgba(0,0,0,.55);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
+              <div style="font-size:11px;font-weight:500;letter-spacing:.28em;color:#958C66;">{{ z.label }}</div>
+              <div style="font-size:15.5px;color:#5E5340;overflow-wrap:anywhere;">{{ z.value }}</div>
+            </div>
+            <button type="button" onClick="{{ z.onCopy }}" style="flex-shrink:0;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #5E5340;background:{{ z.bg }};color:{{ z.fg }};font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.2em;cursor:pointer;transition:background 200ms,color 200ms;">{{ z.cta }}</button>
+          </div>
+        </sc-for>
+      </div>
+    <sc-if value="{{ hasGiftLink }}" hint-placeholder-val="{{ false }}">
+      <a href="{{ giftLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;margin-top:16px;min-height:50px;border-radius:999px;background:#9AAC94;color:#4A4130;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.24em;padding-left:.24em;" style-hover="background:#879D80;color:#4A4130;">{{ giftLinkLabel }}</a>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
 
 <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ false }}">
 <div data-screen-label="08b Formulario RSVP" onClick="{{ closeForm }}" style="position:fixed;inset:0;z-index:150;background:rgba(50,42,28,.55);display:flex;align-items:center;justify-content:center;padding:16px;">
@@ -383,9 +406,12 @@ class Component extends DCLogic {
     rsvpTitle: 'POR FAVOR CONFIRMA TU ASISTENCIA',
     rsvpText: '¡Nos hace muy feliz que puedas acompañarnos!',
     adultsNote: 'Celebración sólo para adultos',
+    rsvpFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfCXdO2tqpL4HE79Kxyiv9dCHDDq_EAhztM02UoYuIs1KBHUg/viewform', // Formulario de Google para confirmar. Si se deja vacío, se usa el formulario interno que envía por WhatsApp.
     whatsappPhone: '584245414804', // WhatsApp de quien recibe las confirmaciones — solo números, con código de país
     whatsappMessage: 'Hola, confirmo mi asistencia a la boda de Ronald & Mafe.',
-    giftsText: 'El mayor regalo es contar con su presencia este día y poder celebrar juntos. Si deseas tener un detalle con nosotros, te dejaremos abajo dos opciones.',
+    giftsText: 'El mayor regalo es contar con su presencia este día y poder celebrar juntos. Si deseas tener un detalle con nosotros, toca el botón para ver las opciones.',
+    giftLink: 'https://ilargentovzla.com/apps/giftregistry/registry/440329?_r=1&utm_source=gift_reggie&utm_medium=gift_reggie&utm_campaign=gift_reggie&utm_content=440329', // URL de la lista de regalos. Si se deja vacío, el botón no se muestra.
+    giftLinkLabel: "IL'ARGENTO VZLA",
     zelle: [
       { label: 'ZELLE · MAFE', value: 'mafeazcunes@gmail.com' },
       { label: 'ZELLE · RONALD', value: '[ZELLE_RONALD]' },
@@ -396,14 +422,16 @@ class Component extends DCLogic {
   };
   // ====================================================================================
 
-  state = { stage: 0, now: Date.now(), copied: null, playing: false, formOpen: false, formSent: false, formError: '',
+  state = { stage: 0, now: Date.now(), copied: null, playing: false, giftsOpen: false, formOpen: false, formSent: false, formError: '',
     f: { nombre: '', apellido: '', telefono: '', asiste: '', acomp: '', acompNombre: '', acompApellido: '', origen: '', palabras: '', cancionPista: '', cancionNovios: '' } };
 
   // ---------------- Formulario RSVP → WhatsApp ----------------
   setField = (k, v) => this.setState(s => ({ f: { ...s.f, [k]: v }, formError: '' }));
   fieldHandlers = ['nombre', 'apellido', 'telefono', 'acompNombre', 'acompApellido', 'palabras', 'cancionPista', 'cancionNovios']
     .reduce((o, k) => (o[k] = e => this.setField(k, e.target.value), o), {});
-  openForm = () => { this.setState({ formOpen: true, formSent: false }); document.body.style.overflow = 'hidden'; };
+  openGifts = () => { this.setState({ giftsOpen: true }); document.body.style.overflow = 'hidden'; };
+  closeGifts = () => { this.setState({ giftsOpen: false }); document.body.style.overflow = ''; };
+  openForm = () => { if (this.CONFIG.rsvpFormUrl) { window.open(this.CONFIG.rsvpFormUrl, '_blank', 'noopener'); return; } this.setState({ formOpen: true, formSent: false }); document.body.style.overflow = 'hidden'; };
   closeForm = () => { this.setState({ formOpen: false }); document.body.style.overflow = ''; };
   submitForm = () => {
     const f = this.state.f, C = this.CONFIG;
@@ -629,6 +657,9 @@ class Component extends DCLogic {
     const [acNoBg, acNoFg] = pick(f.acomp === 'no', G), [acSiBg, acSiFg] = pick(f.acomp === 'si', G);
     return {
       hasMusic: !!C.musicUrl,
+      hasRsvpUrl: !!C.rsvpFormUrl, noRsvpUrl: !C.rsvpFormUrl, rsvpUrl: C.rsvpFormUrl,
+      giftsOpen: this.state.giftsOpen, openGifts: this.openGifts, closeGifts: this.closeGifts,
+      hasGiftLink: !!C.giftLink, giftLink: C.giftLink, giftLinkLabel: C.giftLinkLabel,
       formOpen: this.state.formOpen, formSent: this.state.formSent, formEditing: !this.state.formSent,
       formError: this.state.formError, f, on: this.fieldHandlers,
       openForm: this.openForm, closeForm: this.closeForm, submitForm: this.submitForm, stop: e => e.stopPropagation(),
