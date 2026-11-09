@@ -151,6 +151,9 @@ img{display:block;max-width:100%}
               <sc-if value="{{ ev.hasLink }}" hint-placeholder-val="{{ false }}">
                 <a href="{{ ev.link }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:10px;display:flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;background:#9AAC94;color:#4A4130;font-size:11px;font-weight:500;letter-spacing:.26em;" style-hover="background:#879D80;color:#4A4130;">CÓMO LLEGAR</a>
               </sc-if>
+              <sc-if value="{{ ev.hasRef }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ ev.ref }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:8px;font-family:'Jost',sans-serif;font-weight:400;font-size:13px;letter-spacing:.2em;color:#5E5340;text-decoration:underline;text-underline-offset:4px;">DRESSCODE WHITE PARTY</a>
+              </sc-if>
             </div>
           </div>
         </sc-for>
@@ -168,6 +171,7 @@ img{display:block;max-width:100%}
       <sc-if value="{{ hasWhiteNote }}" hint-placeholder-val="{{ true }}">
         <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:15px;line-height:1.35;color:#5E5340;">{{ c.whitePartyNote }}</div>
       </sc-if>
+      <a href="https://pin.it/bM0IH9MSy" target="_blank" rel="noopener" style="margin-top:6px;font-family:'Jost',sans-serif;font-weight:400;font-size:13px;letter-spacing:.2em;color:#5E5340;text-decoration:underline;text-underline-offset:4px;">DRESSCODE BODA</a>
     </div>
   </section>
 
@@ -175,7 +179,7 @@ img{display:block;max-width:100%}
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#F3ECE6"></path></svg>
     <div style="position:relative;max-width:520px;margin:0 auto;">
       <div data-reveal="1" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:30px;">
-        <img src="../assets/palmera-marron.png" alt="" loading="lazy" style="width:54px;transform:rotate(5deg);"></img>
+        <img src="../assets/sol-marron.png" alt="" loading="lazy" style="width:54px;transform:rotate(0deg);"></img>
         <div style="font-size:11px;font-weight:500;letter-spacing:.4em;padding-left:.4em;color:#796C51;">DÓNDE HOSPEDARSE</div>
         <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#796C51;text-wrap:balance;">HOTELES RECOMENDADOS</h2>
       </div>
@@ -251,7 +255,7 @@ img{display:block;max-width:100%}
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#D5BD9C"></path></svg>
     <div style="max-width:520px;margin:0 auto;">
       <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:28px;">
-        <img src="../assets/sol-dorado.png" alt="" loading="lazy" style="filter:saturate(1.5) brightness(.86);width:56px;transform:rotate(6deg);"></img>
+        <img src="../assets/sol-marron-oscuro.png" alt="" loading="lazy" style="width:56px;transform:rotate(6deg);"></img>
         <div style="font-size:13px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#5E5340;">REGALOS</div>
         <div style="width:36px;height:1px;background:#958C66;"></div>
         <p style="margin:0;font-family:'Jost',sans-serif;font-weight:300;font-size:16px;line-height:1.5;color:#5E5340;text-wrap:pretty;">{{ c.giftsText }}</p>
@@ -264,7 +268,7 @@ img{display:block;max-width:100%}
 
   <section data-screen-label="10 Cierre" style="position:relative;background:#F3ECE6;padding:96px 24px 104px;text-align:center;">
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 46 C240 12 480 12 720 46 C960 78 1200 78 1440 46 L1440 80 L0 80 Z" fill="#F3ECE6"></path></svg>
-    <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-dorado.webp);background-size:420px;opacity:.3;pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background-image:url(../assets/patron-conchas-armonia.png);background-size:420px;opacity:.3;pointer-events:none;"></div>
     <div data-reveal="1" style="position:relative;max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px;">
       <div style="font-family:'Pinyon Script',cursive;font-size:clamp(56px,16vw,80px);line-height:1.15;padding-bottom:.2em;color:#796C51;">{{ c.closing }}</div>
       <img src="../assets/sello.png" alt="Sello R&amp;M" loading="lazy" style="width:140px;height:auto;filter:drop-shadow(0 6px 8px rgba(50,42,28,.3));"></img>
@@ -383,7 +387,7 @@ class Component extends DCLogic {
     locationDisplay: 'ISLA DE MARGARITA, VENEZUELA',
     weddingDateISO: '2027-04-03T15:30:00-04:00', // hora de Venezuela (UTC-4)
     events: [
-      { icon: 'concha', title: 'White Party', date: 'JUEVES 01 · ABRIL · 2027', time: '6:00 PM', place: 'Lugar por confirmar', link: '' },
+      { icon: 'concha', title: 'White Party', date: 'JUEVES 01 · ABRIL · 2027', time: '6:00 PM', place: 'Lugar por confirmar', link: '', ref: 'https://pin.it/2scJfXkTR' },
       { icon: 'cruz', title: 'Ceremonia', date: 'SÁBADO 03 · ABRIL · 2027', time: '3:30 PM', place: 'Catedral Nuestra Señora de la Asunción', link: 'https://maps.app.goo.gl/VgX8rsmx8gKoJEUz7' },
       { icon: 'sol', title: 'Celebración', date: 'SÁBADO 03 · ABRIL · 2027', time: '6:00 PM', place: 'Downtown Beach Margarita, Isla de Margarita, Venezuela', link: 'https://www.google.com/maps/place/Downtown+Beach+Club/@10.9887336,-63.8039532,17z/data=!3m1!4b1!4m6!3m5!1s0x8c318fdecddf5167:0x99f0afd69eaea1fb!8m2!3d10.9887336!4d-63.8039532' },
     ],
@@ -670,7 +674,7 @@ class Component extends DCLogic {
         const [bg, fg] = pick(f.origen === l, G); return { label: l, bg, fg, onClick: () => this.setField('origen', f.origen === l ? '' : l) };
       }),
       sentMsg: f.asiste === 'no' ? `${f.nombre}, te vamos a extrañar. Gracias por avisarnos.` : `${f.nombre}, ya estás en nuestra lista. ¡Nos vemos en Margarita!`,
-      c: { ...C, events: C.events.map(e => ({ ...e, iconSrc: icons[e.icon] || icons.concha, hasLink: !!e.link })) },
+      c: { ...C, events: C.events.map(e => ({ ...e, iconSrc: icons[e.icon] || icons.concha, hasLink: !!e.link, hasRef: !!e.ref })) },
       showEnvelope: st < 3 && !this.props.skipEnvelope,
       openEnvelope: this.openEnvelope,
       flapZ: open ? 0 : 5,
