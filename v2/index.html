@@ -233,7 +233,22 @@ img{display:block;max-width:100%}
     </div>
   </section>
 
-  <section data-screen-label="08 RSVP" style="position:relative;background:#F3ECE6;padding:88px 24px 80px;">
+  <section data-screen-label="07b Traslados" style="position:relative;background:#F3ECE6;padding:72px 24px 72px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 80 C360 0 1080 0 1440 80 Z" fill="#F3ECE6"></path></svg>
+    <div data-reveal="1" style="position:relative;max-width:400px;margin:0 auto;border:1px solid rgba(149,140,102,.55);outline:1px solid rgba(149,140,102,.25);outline-offset:-9px;border-radius:6px;padding:40px 26px 36px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#796C51" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(-8deg);"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,7.4vw,34px);letter-spacing:.14em;padding-left:.14em;color:#796C51;text-wrap:balance;">TRASLADOS</h2>
+      <div style="width:36px;height:1px;background:#958C66;"></div>
+      <p style="margin:0;font-family:'Jost',sans-serif;font-weight:300;font-size:15.5px;line-height:1.45;color:#5E5340;text-wrap:pretty;">Para tu tranquilidad y la disponibilidad de tu traslado, te recomendamos a Fenix Travel. Escríbeles por WhatsApp para coordinar con anticipación.</p>
+      <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#5E5340;margin-top:4px;">Fenix Travel</div>
+      <div style="display:flex;flex-direction:column;gap:10px;width:100%;margin-top:6px;">
+        <a href="https://wa.link/p3dd1c" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:999px;background:#9AAC94;color:#4A4130;font-size:11.5px;font-weight:500;letter-spacing:.26em;box-shadow:0 10px 20px -12px rgba(100,120,92,.85);" style-hover="background:#879D80;color:#4A4130;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>WHATSAPP 1</a>
+        <a href="https://wa.link/2me9aq" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:999px;background:#9AAC94;color:#4A4130;font-size:11.5px;font-weight:500;letter-spacing:.26em;box-shadow:0 10px 20px -12px rgba(100,120,92,.85);" style-hover="background:#879D80;color:#4A4130;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>WHATSAPP 2</a>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="08 RSVP"style="position:relative;background:#F3ECE6;padding:88px 24px 80px;">
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:calc(-1 * clamp(32px,6vw,72px) + 1px);width:100%;height:clamp(32px,6vw,72px);display:block;"><path d="M0 40 C180 80 360 80 540 48 C720 16 900 0 1080 24 C1260 48 1350 64 1440 52 L1440 80 L0 80 Z" fill="#F3ECE6"></path></svg>
     <div data-reveal="1" style="position:relative;max-width:400px;margin:0 auto;background:#F3ECE6;border:1px solid rgba(149,140,102,.55);outline:1px solid rgba(149,140,102,.25);outline-offset:-9px;border-radius:999px 999px 6px 6px;box-shadow:0 18px 38px -22px rgba(60,50,30,.45);padding:96px 26px 44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
       <img src="../assets/monograma-marron.webp" alt="" loading="lazy" style="position:absolute;top:30px;left:50%;width:58px;margin-left:-29px;"></img>
@@ -408,7 +423,7 @@ class Component extends DCLogic {
       { name: 'Francelina', post: '', fotos: [1, 2, 3, 4].map(n => `../assets/lugares/francelina-${n}.jpg`), zona: 'Cocina italiana', instagram: 'francelina.ve', phone: '+58 412 2595133', whatsapp: true, maps: '' },
     ],
     rsvpTitle: 'POR FAVOR CONFIRMA TU ASISTENCIA',
-    rsvpText: '¡Nos hace muy feliz que puedas acompañarnos!',
+    rsvpText: '¡Nos hace muy felices que puedas acompañarnos!',
     adultsNote: 'Celebración sólo para adultos',
     rsvpFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfCXdO2tqpL4HE79Kxyiv9dCHDDq_EAhztM02UoYuIs1KBHUg/viewform', // Formulario de Google para confirmar. Si se deja vacío, se usa el formulario interno que envía por WhatsApp.
     whatsappPhone: '584245414804', // WhatsApp de quien recibe las confirmaciones — solo números, con código de país
