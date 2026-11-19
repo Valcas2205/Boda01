@@ -21,7 +21,8 @@ a{color:inherit;text-decoration:none}
 .c{position:absolute;left:0;right:0;text-align:center}
 
 /* ---------- Página 1 · monograma ---------- */
-.p1 .mono{position:absolute;left:50%;top:50%;width:360px;transform:translate(-50%,-50%)}
+.p1 .papel{background-position:0 -50px}
+.p1 .mono{position:absolute;left:50%;top:50%;width:340px;filter:drop-shadow(0 10px 14px rgba(50,42,28,.3));transform:translate(-50%,-50%)}
 
 /* ---------- Página 2 · sobre real de v2 arriba + hoja grande encima, centrada ---------- */
 .p2 .sobre{--w:720px;position:absolute;left:60px;top:100px;width:var(--w);height:var(--w)}
@@ -42,24 +43,18 @@ a{color:inherit;text-decoration:none}
 .p2 .tx .wp{margin-top:38px;font-family:"Jost",sans-serif;font-size:15px;letter-spacing:.3em;padding-left:.3em;color:#958C66;font-weight:500}
 
 /* ---------- Página 3 · arco de la playa + enlace ---------- */
-.p3 .papel{display:none}
-.p3 .marco{position:absolute;left:110px;top:130px;width:860px;padding:14px;border:1.5px solid rgba(149,140,102,.55);border-radius:999px 999px 8px 8px}
-.p3 .arco{position:relative;aspect-ratio:5/6;border-radius:999px 999px 3px 3px;overflow:hidden;background:#D5BD9C}
-.p3 .arco img{width:100%;height:100%;object-fit:cover;object-position:50% 78%;opacity:.5}
-.p3 .sol{position:absolute;left:36px;top:300px;width:170px}
-.p3 .k{top:1190px;font-size:20px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#958C66}
-.p3 .info{top:1250px;padding:0 130px;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:44px;line-height:1.4;letter-spacing:.04em;color:#796C51}
-.p3 .btn{position:absolute;left:50%;top:1530px;transform:translateX(-50%);display:block;padding:32px 66px;border-radius:999px;background:#9AAC94;color:#4A4130;font-weight:500;font-size:28px;letter-spacing:.22em;padding-left:calc(66px + .22em);white-space:nowrap}
-.p3 .url{top:1690px;font-weight:500;font-size:28px;letter-spacing:.14em;color:#5E5340}
-.p3 .nota{top:1790px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:28px;color:#796C51}
+.p3 .k{top:760px;font-size:17px;font-weight:500;letter-spacing:.42em;padding-left:.42em;color:#958C66}
+.p3 .info{top:815px;padding:0 190px;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:32px;line-height:1.4;letter-spacing:.04em;color:#796C51}
+.p3 .btn{position:absolute;left:50%;top:1010px;transform:translateX(-50%);display:block;padding:24px 52px;border-radius:999px;background:#9AAC94;color:#4A4130;font-weight:500;font-size:21px;letter-spacing:.22em;padding-left:calc(52px + .22em);white-space:nowrap}
+.p3 .nota{top:1150px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;color:#796C51}
 </style>
 </head>
 <body>
 
-<!-- 1 · Monograma -->
+<!-- 1 · Sello -->
 <section class="page p1">
   <div class="papel"></div><div class="grano"></div>
-  <img class="mono" src="../assets/monograma-tinta.webp" alt="Monograma R&amp;M">
+  <img class="mono" src="../assets/sello.png" alt="Sello R&amp;M">
 </section>
 
 <!-- 2 · Sobre + hoja: imagen de pagina2.png (fuente editable: pagina2-fuente.html). Se usa imagen porque el visor de PDF del iPhone dibuja mal las sombras. -->
@@ -67,14 +62,10 @@ a{color:inherit;text-decoration:none}
 
 <!-- 3 · Arco de la playa + enlace -->
 <section class="page p3">
-  <div class="grano"></div>
-  <div class="marco"><div class="arco"><img src="../assets/playa-hero.webp" alt="Acuarela de la playa en Isla de Margarita"></div></div>
-  <img class="sol" src="../assets/sol-dorado.png" alt="">
+  <div class="papel"></div><div class="grano"></div>
   <div class="c k">MUCHO MÁS TE ESPERA</div>
   <div class="c info">Itinerario, hoteles y restaurantes recomendados, traslados y confirmación de asistencia en nuestra invitación:</div>
   <a class="btn" href="https://ronaldymafe.vercel.app/">VER INVITACIÓN</a>
-  <a class="c url" href="https://ronaldymafe.vercel.app/">ronaldymafe.vercel.app</a>
-  <div class="c nota">¡Te esperamos!</div>
 </section>
 
 </body>
