@@ -193,6 +193,7 @@ img{display:block;max-width:100%}
             <div style="padding:20px 20px 18px;display:flex;flex-direction:column;gap:6px;">
               <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.1;color:#5E5340;">{{ h.name }}</div>
               <div style="font-size:13.5px;line-height:1.5;color:#796C51;text-wrap:pretty;">{{ h.zona }}</div>
+              <sc-if value="{{ h.hasNota }}" hint-placeholder-val="{{ false }}"><div style="margin-top:6px;padding-top:8px;border-top:1px solid rgba(149,140,102,.3);font-size:12px;line-height:1.45;font-style:italic;color:#8A7F63;text-wrap:pretty;">{{ h.nota }}</div></sc-if>
             </div>
             <div style="display:flex;gap:1px;background:rgba(149,140,102,.4);border-top:1px solid rgba(149,140,102,.4);">
               <sc-if value="{{ h.hasIg }}" hint-placeholder-val="{{ true }}"><a href="{{ h.instagramUrl }}" target="_blank" rel="noopener" style="flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;min-height:48px;background:#F3ECE6;font-size:10.5px;font-weight:500;letter-spacing:.2em;color:#5E5340;" style-hover="background:#796C51;color:#F3ECE6;">INSTAGRAM</a></sc-if>
@@ -430,7 +431,7 @@ class Component extends DCLogic {
     whitePartyNote: '', // ej. 'White Party del jueves: total white' — '' lo oculta
     // instagram: usuario sin @ ('' oculta). phone: '' oculta Contacto; whatsapp:true abre WhatsApp. maps: '' = búsqueda por nombre.
     hotels: [
-      { name: 'Tibisay', post: '', fotos: [1, 2, 3, 4, 5, 6].map(n => `./assets/lugares/tibisay-${n}.webp`), /* ./assets/lugares/tibisay.jpg */ zona: 'Pampatar · frente al mar', instagram: 'tibisayhotelmargarita', phone: '+58 412 6950618', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Tibisay%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
+      { name: 'Tibisay', post: '', fotos: [1, 2, 3, 4, 5, 6].map(n => `./assets/lugares/tibisay-${n}.webp`), /* ./assets/lugares/tibisay.jpg */ zona: 'Pampatar · frente al mar', nota: 'Los invitados contarán con descuentos en este hotel. Contacta a nuestra Wedding Planner.', instagram: 'tibisayhotelmargarita', phone: '+58 412 6950618', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Tibisay%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
       { name: 'Aria by LD', post: '', fotos: [1, 2, 3].map(n => `./assets/lugares/aria-${n}.jpg`), zona: 'Pampatar · hotel boutique solo adultos', instagram: 'ariapampatar.byld', phone: '+58 412 8283638', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Aria%20by%20LD%20Hotel%20Boutique%2C%20Pampatar' },
       { name: 'Hotel Margarita Real', post: '', fotos: [1, 2, 3].map(n => `./assets/lugares/margarita-real-${n}.jpg`), zona: 'Pampatar · Playa El Ángel', instagram: 'hotelmargaritareal', phone: '+58 424 8995183', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Hotel%20Margarita%20Real%2C%20Pampatar' },
       { name: 'Lidotel Margarita', post: '', fotos: [1, 2].map(n => `./assets/lugares/lidotel-${n}.jpg`), zona: 'Pampatar', instagram: 'lidotel.margarita', phone: '+58 424 1593832', whatsapp: true, maps: 'https://www.google.com/maps/search/?api=1&query=Lidotel%20Hotel%20Boutique%20Margarita%2C%20Pampatar' },
@@ -686,6 +687,7 @@ class Component extends DCLogic {
     const list = arr => arr.map(x => {
       const ig = (x.instagram || '').replace(/^@/, ''), tel = (x.phone || '').replace(/\D/g, '');
       return { ...x, hasPost: !!postId(x.post), postSrc: `https://www.instagram.com/${/\/reel\//.test(x.post || '') ? 'reel' : 'p'}/${postId(x.post)}/embed/`, fotos: (x.fotos || (x.foto ? [x.foto] : [])).map((e, _, a) => { const o = typeof e === 'string' ? { img: e } : e; return { src: o.video || o.img, poster: o.img || '', link: o.link || '', isVideo: !!o.video, isLink: !o.video && !!o.link, isImg: !o.video && !o.link, w: a.length > 1 ? '86%' : '100%', ar: o.ar || '4/3' }; }), hasPhoto: !!(x.fotos || x.foto), manyPhotos: (x.fotos || []).length > 1, hasIg: !!ig, instagramUrl: `https://instagram.com/${ig}`, hasPhone: !!(x.phone || x.contactUrl), ctaLabel: x.contactLabel || 'CONTACTO',
+        hasNota: !!x.nota,
         contactLink: x.contactUrl || (x.whatsapp ? `https://wa.me/${tel}` : `tel:+${tel}`),
         mapsLink: x.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.name + ', Isla de Margarita, Venezuela')}` };
     });
